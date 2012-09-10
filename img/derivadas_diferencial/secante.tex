@@ -1,0 +1,19 @@
+\psset{xunit=2,algebraic}
+\begin{pspicture*}(-1,-0.5)(3,4)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-0.3,-0.5)(2.5,4)
+\psplot[linecolor=blue]{0.2}{1.8}{x^3-x^2+x+0.5}
+\footnotesize
+\rput[r](1.4,3.5){$f(x)$}
+\psxTick[ticksize=-3pt 0,labelsep=3pt](0.5){a}
+\psxTick[ticksize=-3pt 0,labelsep=3pt](1.5){a+\Delta x}
+\psline[linewidth=0.5pt,linestyle=dashed,linecolor=gray](0.5,0)(0.5,0.875)
+\psline[linewidth=0.5pt,linestyle=dashed,linecolor=gray](1.5,0.875)(0,0.875)
+\psline[linewidth=0.5pt,linestyle=dashed,linecolor=gray](1.5,0)(1.5,3.125)(0,3.125)
+\psyTick[ticksize=-3pt 0,labelsep=3pt](0.875){f(a)}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](3.125){f(a+\Delta x)}
+\psplot[linecolor=red]{0.2}{1.8}{2.25*x-0.25}
+\psline[arrows=|*-|*,linecolor=green](1.5,3.125)(1.5,0.875)
+\psline[arrows=|*-|*,linecolor=green](0.5,0.875)(1.5,0.875)
+\rput[l](1.6,2){$\Delta y=f(a+\Delta x)-f(a)$}
+\rput[t](1,0.8){$\Delta x$}
+\end{pspicture*}

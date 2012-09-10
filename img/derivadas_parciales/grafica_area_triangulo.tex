@@ -1,0 +1,8 @@
+\psset{unit=0.7}
+%\psset{lightsrc=30 -10 10,linewidth=0.5\pslinewidth}
+\psset{viewpoint=100 30 30 rtp2xyz,Decran=50}
+\begin{pspicture}(-7,-4)(7,5)
+%\psSolid[object=grille,base=-4 4 -4 4,action=draw]
+\psSurface[fillcolor=blue!50,ngrid=.25 .25,incolor=yellow,algebraic,linewidth=0.25\pslinewidth,linecolor=gray](-4,-4)(4,4){x*y/2}
+\axesIIID(4,1,3)(6,5,7)
+\end{pspicture}

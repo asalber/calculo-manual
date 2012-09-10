@@ -1,0 +1,316 @@
+%Version control information
+%$HeadURL: https://ejercicioscalculo.googlecode.com/svn/trunk/compendio_ejercicios_calculo.tex $} {$LastChangedDate: 2008-07-09 16:26:20 +0200 (mi�, 09 jul 2008) $
+%$LastChangedRevision: 6 $
+%$LastChangedBy: asalber $
+
+
+\section{Derivada y Diferencial} 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivada y diferencial}
+\tableofcontents[sectionstyle=show/hide,hideothersubsections]
+\end{frame}
+
+\subsection{El concepto de derivada}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tasa de variación media}
+\begin{definicion}[Incremento]
+Dada una función $f$, se llama \emph{incremento} de $f$ en un intervalo $[a,b]$ a la diferencia entre el valor de $f$ en cada uno de los extremos del intervalo, y se nota
+\[\Delta y= f(b)-f(a).\]
+\end{definicion}
+
+Cuando $f$ es la función identidad $y=x$, se cumple que
+\[\Delta x=\Delta y= f(b)-f(a)=b-a,\]
+y por tanto, el incremento de $x$ en un intervalo es la amplitud del intervalo. Esto nos permite escribir el intervalo $[a,b]$ como $[a,a+\Delta x]$.
+
+\begin{definicion}[Tasa de variación media]
+Se llama \emph{tasa de variación media} de $f$ en el intervalo $[a,a+\Delta x]$, al cociente entre el incremento de $y$ y el incremento de $x$ en dicho intervalo, y se escribe
+\[
+\textrm{TVM}\;f[a,a+\Delta x]=\frac{\Delta y}{\Delta x}=\frac{f(a+\Delta x)-f(a)}{\Delta x} 
+\]
+\end{definicion}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tasa de variación media: Ejemplo}
+Consideremos la función $y=x^2$ que mide el área de un cuadrado de chapa metálica de lado $x$.
+
+Si en un determinado instante el lado del cuadrado es $a$, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado una cantidad $\Delta x$, ¿en cuánto se incrementará el área del cuadrado?
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\begin{align*}
+\Delta y &= f(a+\Delta x)-f(a)=(a+\Delta x)^2-a^2=\\
+&= a^2+2a\Delta x+\Delta x^2-a^2=2a\Delta x+\Delta x^2.
+\end{align*}
+\end{column}
+\begin{column}{0.3\textwidth}
+\begin{center}
+\scalebox{1}{\input{img/derivadas_diferencial/variacion_area_cuadrado}}
+\end{center}
+\end{column}
+\end{columns}
+¿Cuál será la tasa de variación media del área en el intervalo $[a,a+\Delta x]$?
+\[
+\textrm{TVM}\;f[a,a+\Delta x]=\frac{\Delta y}{\Delta x}=\frac{2a\Delta x+\Delta x^2}{\Delta x}=2a+\Delta x. 
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Interpretación geométrica de la tasa de variación media}
+La tasa de variación media de $f$ en el intervalo $[a,a+\Delta x]$ es la pendiente de la recta \emph{secante} a $f$ en los puntos $(a,f(a))$ y $(a+\Delta x,f(a+\Delta x))$.
+\begin{center}
+\scalebox{1}{\input{img/derivadas_diferencial/secante}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tasa de variación instantánea}
+En muchas ocasiones, es interesante estudiar la tasa de variación que experimenta una función, no en intervalo, sino en un punto.
+
+Conocer la tendencia de variación de una función en un instante puede ayudarnos a predecir valores en instantes próximos.
+
+\begin{definicion}[Tasa de variación instantánea y derivada]
+Dada una función $f$, se llama \emph{tasa de variación instantánea} de $f$ en un punto $a$, al límite de la tasa de variación media de $f$ en el intervalo $[a,a+\Delta x]$, cuando $\Delta x$ tiende a 0, y lo notaremos
+\[
+\textrm{TVI}\;f (a)=\lim_{\Delta x\rightarrow 0} \textrm{TVM}\; f[a,a+\Delta x]=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x} 
+\]
+Cuando este límite existe, se dice que la función $f$ es derivable en el punto $a$, y al valor del mismo se le llama derivada de $f$ en $a$, y se nota como $f'(a)$.
+\end{definicion}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tasa de variación instantánea: Ejemplo}
+Consideremos de nuevo la función $y=x^2$ que mide el área de un cuadrado de chapa metálica de lado $x$.
+
+Si en un determinado instante el lado del cuadrado es $a$, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado, ¿cuál es la tasa de variación instantánea del área del cuadrado en dicho instante?
+\begin{align*}
+\textrm{TVI}\;f(a)]&=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x} =\\
+&=\lim_{\Delta x\rightarrow 0}\frac{2a\Delta x+\Delta x^2}{\Delta x}=\lim_{\Delta x\rightarrow 0} 2a+\Delta x= 2a. 
+\end{align*}
+Así pues,
+\[
+f'(a)=2a.
+\]
+
+El signo de $f'(a)$ indica la tendencia de crecimiento de $f$ en el punto $a$:
+\begin{itemize}
+\item[--]  $f'(a)>0$ indica que la tendencia es creciente.
+\item[--]  $f'(a)<0$ indica que la tendencia es decreciente.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Interpretación geométrica de la tasa de variación instantánea}
+La tasa de variación instantánea de $f$ en el punto $a$ es la pendiente de la recta \emph{tangente} a $f$ en el punto $(a,f(a))$.
+\begin{center}
+\scalebox{1}{\input{img/derivadas_diferencial/tangente}}
+\end{center}
+\end{frame}
+
+
+
+\subsection{Rectas tangente y normal}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tasa de variación instantánea}
+\begin{definicion}[Recta tangente y normal a una función en un punto]
+Dada una función $f$, se llama \emph{recta tangente} a $f$ en un punto $(a,f(a))$, a la recta de ecuación 
+\[
+y=f(a)+f'(a)(x-a).
+\]
+Se llama \emph{recta normal} a $f$ en un punto $(a,f(a))$, a la recta de ecuación 
+\[
+y=f(a)-\frac{1}{f'(a)}(x-a).
+\]
+\end{definicion}
+
+\begin{center}
+\scalebox{1}{\input{img/derivadas_diferencial/tangente_normal}}
+\end{center}
+\end{frame}
+
+
+
+\subsection{El concepto de diferencial}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{El concepto de diferencial}
+\begin{definicion}[Diferencial de una función en un punto]
+Dada una función $f$, se llama \emph{diferencial} de $f$ en un punto $a$, al la función
+\[
+\begin{array}{rccc}
+dy=df(a): & \mathbb{R} & \longrightarrow & \mathbb{R} \\
+& \Delta x & \longrightarrow & f'(a)\Delta x
+\end{array}
+\]
+\end{definicion}
+
+Cuando $f$ es la función identidad $y=x$,  entonces $f'(a)=1$, y se cumple que
+\[ dx=dy=f'(a)\Delta x=\Delta x,\]
+de modo que también podemos definir el diferencial como 
+\[dy=df(a)=f'(a)dx.\]
+
+De aquí se deduce otra forma de escribir la derivada de $f$ en $a$
+\[f'(a)=\frac{dy}{dx}=\frac{df(a)}{dx}.\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación de una función mediante su diferencial}
+El diferencial de una función $f$ en un punto $a$, permite aproximar la variación de $f$ cerca de $a$. 
+
+\begin{center}
+\scalebox{1}{\input{img/derivadas_diferencial/diferencial}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación de una función mediante su diferencial: Ejemplo}
+Consideremos otra vez la función $y=x^2$ que mide el área de un cuadrado de chapa metálica de lado $x$.
+
+Si el lado del cuadrado es $a$, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado, ¿cuál  será aproximadamente la variación que habrá experimentado el área, cuando el lado aumente una cantidad $dx$?
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\begin{align*}
+\Delta y &= f(a+dx)-f(a)=(a+dx)^2-a^2=\\
+&= a^2+2adx+dx^2-a^2=2adx+dx^2,\\
+\only<2->{dy &= f'(a)dx= 2adx.}
+\end{align*}
+\uncover<3->{Además, \[\lim_{dx\rightarrow 0}\Delta y-dy=\lim_{dx\rightarrow 0}dx^2=0.\]}
+\end{column}
+\begin{column}{0.3\textwidth}
+\begin{center}
+\scalebox{1}{\input{img/derivadas_diferencial/diferencial_area_cuadrado}}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+\subsection{Álgebra de derivadas}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Propiedades del diferencial}
+Si $y=c$, es una función constante, entonces $dy=0$.
+Si $y=x$, es la función identidad, entonces  $dy=dx$.
+
+Si $u=f(x)$ y $v=g(x)$ son dos funciones diferenciables, entonces
+\begin{itemize}
+\item $d(u+v)=d(u)+d(v)$
+\item $d(u-v)=d(u)-d(v)$
+\item $d(u\cdot v)=d(u)\cdot v+ u\cdot d(v)$
+\item $d\left(\dfrac{u}{v}\right)=\dfrac{du\cdot v-u\cdot dv}{v^2}$
+\end{itemize}
+\end{frame}
+
+\subsection{Derivada de una función compuesta: La regla de la cadena}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Diferencial de una función compuesta}
+\framesubtitle{La regla de la cadena}
+Si $y=f\circ g$ es la composición de dos funciones $y=f(z)$ y $z=g(x)$, entonces
+\[dy=f'(z)dz=f'(g(x))g'(x)dx,\]
+de donde se deduce
+\[
+(f\circ g)'(x)=\frac{dy}{dx}=\frac{f'(g(x))g'(x)dx}{dx}=f'(g(x))g'(x),
+\]
+o bien
+\[
+(f\circ g)'(x)=\frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=f'(z)g'(x)=f'(g(x))g'(x).
+\]
+\end{frame}
+
+
+
+\subsection{Derivada de la inversa de una función}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivada de la función inversa}
+Si $y=f(x)$ es una función y $x=f^{-1}(y)$ es su inversa, entonces
+\[dy=f'(x)dx \quad \textrm{y} \quad dx=\left(f^{-1}\right)'(y)dy,\]
+de donde se deduce
+\[
+\left(f^{-1}\right)'(y)=\frac{dx}{dy}=\frac{dx}{f'(x)dx}=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}
+\]
+o bien
+\[
+\left(f^{-1}\right)'(y)=\frac{dx}{dy}=\frac{1}{dy/dx}=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}
+\]
+\end{frame}
+
+
+
+\subsection{Derivada de una función implícita}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivada de una función implícita}
+Si $F(x,y)=0$ es una función implícita entonces 
+\[
+dF(x,y)=d0=0.
+\]
+
+Si $F(x,y)=0$ es una función implícita en la que $y$ depende de $x$, entonces podemos calcular la derivada de $y$ a partir del diferencial
+\[
+\frac{dF(x,y)}{dx}=\frac{d0}{dx}=0.
+\]
+\structure{\textbf{Ejemplo}}. Consideremos la función implícita de la circunferencia de radio 1, $x^2+y^2=1$. Entonces su diferencial es
+\[
+d(x^2+y^2)=d1=0 \Leftrightarrow d(x^2)+d(y^2)=2x\;dx+2y\;dy=0.
+\]
+A partir de aquí podemos calcular fácilmente la derivada de $y$:
+\[
+\frac{d(x^2+y^2)}{dx}= \frac{2x\;dx+2y\;dy}{dx}=2x\frac{dx}{dx}+2y\frac{dy}{dx}= 2x+2y\frac{dy}{dx}=0 \Leftrightarrow \frac{dy}{dx}=\frac{-x}{y}.
+\]
+
+\end{frame}
+
+
+
+\subsection{Derivada de una función paramétrica}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivada de una función parametrica}
+
+Dada una función paramétrica
+\[
+\left\{%
+\begin{array}{l}
+x=f(t) \\
+y=g(t) 
+\end{array}%
+\right.  
+\]
+podemos calcular su derivada a partir de las derivadas de $f$ y $g$:
+\[\frac{dy}{dx}=\frac{g'(t)\,dt}{f'(t)\,dt}=\frac{g'(t)}{f'(t)}.\]
+
+\structure{\textbf{Ejemplo}}. Consideremos la elipse
+\[
+\left\{%
+\begin{array}{l}
+x=2\sen t \\
+y=\cos t
+\end{array}%
+\right. 
+\]
+Entonces 
+\[
+\frac{dy}{dx}=\frac{-\sen t\; dt}{2 \cos t\; dt}=\frac{-1}{2}\tg t.
+\]
+\end{frame}

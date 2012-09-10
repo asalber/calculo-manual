@@ -1,0 +1,17 @@
+\psset{unit=0.55,algebraic}
+\begin{pspicture*}(-4,-4)(4,4)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-4,-4)(4,4)
+\psplot[linecolor=blue]{-3.5}{-1.0001}{(2*x+1)/(x^2-1)}
+\psplot[linecolor=blue]{-0.9999}{0.9999}{(2*x+1)/(x^2-1)}
+\psplot[linecolor=blue]{1.0001}{3.5}{(2*x+1)/(x^2-1)}
+\footnotesize
+\rput[l](-4,2){$f(x)=\dfrac{2x+1}{x^2-1}$}
+\end{pspicture*}
+\qquad
+\begin{pspicture*}(-4,-4)(4,4)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-4,-4)(4,4)
+\psplot[linecolor=blue]{-3.5}{-0.0001}{1/x}
+\psplot[linecolor=blue]{0.0001}{3.5}{1/x}
+\footnotesize
+\rput[l](-3,2){$f(x)=\dfrac{1}{x}$}
+\end{pspicture*}

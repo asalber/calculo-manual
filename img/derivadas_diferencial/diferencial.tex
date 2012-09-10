@@ -1,0 +1,34 @@
+\psset{xunit=2,yunit=1.2,algebraic}
+\begin{pspicture*}(-1.2,-0.5)(4.3,4)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-0.3,-0.5)(2,4)
+\psplot[linecolor=blue]{0.2}{1.6}{x^3-x^2+x+0.5}
+\rput[r](1.4,3.5){$f(x)$}
+\psxTick[ticksize=-3pt 0,labelsep=3pt](0.5){a}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](0.875){f(a)}
+\psline[linewidth=0.5pt,linestyle=dashed,linecolor=gray](0.5,0)(0.5,0.875)(0,0.875)
+\uncover<2->{
+\psxTick[ticksize=-3pt 0,labelsep=3pt](1.5){a+dx}
+\psline[linewidth=0.5pt,linestyle=dashed,linecolor=gray](1.5,0)(1.5,3.125)(0,3.125)
+\psyTick[ticksize=-3pt 0,labelsep=3pt](3.125){f(a+dx)}
+\psline[arrows=|*-|*,linecolor=green](0.5,0.875)(1.5,0.875)
+\rput[t](1,0.8){$dx$}
+}
+\uncover<3->{
+\psline[linestyle=dotted,linecolor=gray](1.5,0.875)(2.6,0.875)
+\psline[linestyle=dotted,linecolor=gray](1.5,3.125)(2.6,3.125)
+\psline[arrows=|*-|*,linecolor=orange](2.6,0.875)(2.6,3.125)
+\rput[l](2.7,1.9){$\Delta y=f(a+dx)-f(a)$}
+}
+\uncover<4->{
+\psplot[linecolor=red]{0.2}{1.8}{0.75*x+0.5}
+}
+\uncover<5->{
+\psline[linewidth=0.5pt,linestyle=dashed,linecolor=gray](1.5,1.625)(0,1.625)
+\rput[r](-0.1,1.625){$f(a)+f'(a)dx$}
+}
+\uncover<6->{
+\psline[arrows=|*-|*,linecolor=green](1.5,1.625)(1.5,0.875)
+\rput[l](1.6,1.25){$dy=f'(a)dx$}
+\rput[r](-0.4,2.4){\rotatebox{90}{$\approx$}}
+}
+\end{pspicture*}

@@ -1,0 +1,12 @@
+\psset{unit=1,algebraic}
+\begin{pspicture*}(-2,-1.5)(2,1.5)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-2,-1.5)(2,1.5)
+\psplot[linecolor=blue]{-2}{0}{-1}
+\psplot[linecolor=blue]{0}{2}{1}
+\footnotesize
+\rput[l](0.5,0.5){$f(x)=\dfrac{|x|}{x}$}
+\uncover<2->{
+\psline[arrows=|-|,linecolor=red](0,-1)(0,1)
+\rput[r](-0.1,0.5){Salto}
+}
+\end{pspicture*}

@@ -1,0 +1,8 @@
+\psset{unit=1}
+\begin{pspicture*}(-3,-2)(3,2)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-3,-2)(3,2)
+\psplot[linecolor=blue]{0}{3}{x 1 atan 2 3.1415 mul mul 360 div}
+\psplot[linecolor=blue]{-3}{0}{x neg 1 atan 2 3.1415 mul mul 360 div neg}
+\footnotesize
+\rput[l](0.5,1.5){$f(x)=\arctg x$}
+\end{pspicture*}

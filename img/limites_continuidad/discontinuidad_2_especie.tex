@@ -1,0 +1,8 @@
+\psset{unit=0.55,algebraic}
+\begin{pspicture*}(-3,-2)(3,4)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-3,-0.5)(3,4)
+\psplot[linecolor=blue]{-3}{-1.00001}{1/sqrt(x^2-1)}
+\psplot[linecolor=blue]{1.00001}{3}{1/sqrt(x^2-1)}
+\footnotesize
+\rput[t](0,-0.6){$f(x)=\dfrac{1}{\sqrt{x^2-1}}$}
+\end{pspicture*}

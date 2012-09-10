@@ -1,0 +1,19 @@
+\psset{unit=1.5,algebraic}
+\begin{pspicture*}(-3.5,-2)(4.5,2.1)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-3,-2)(3,2)
+\footnotesize
+\psplot[linecolor=blue]{-3}{3}{sin(x)}
+\rput[l](3.1,0.1){$f(x)=\sen x$}
+\uncover<2->{
+\psplot[linecolor=red]{-3}{3}{x}
+\rput[l](2.2,1.9){$p_{f,0}^1(x)=x$}
+}
+\uncover<3->{
+\psplot[linecolor=green]{-3}{3}{x-x^3/6}
+\rput[l](3.1,-1.6){$p_{f,0}^3(x)=x-\frac{1}{6}x^3$}
+}
+\uncover<4->{
+\psplot[linecolor=orange]{-3}{3}{x-x^3/6+x^5/120}
+\rput[l](2.4,0.9){$p_{f,0}^5(x)=x-\frac{1}{6}x^3+\frac{1}{120}x^5$}
+}
+\end{pspicture*}

@@ -1,0 +1,12 @@
+\psset{unit=1,algebraic}
+\begin{pspicture*}(-1,-0.5)(3.5,2.5)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-0.5,-0.5)(3.5,2.5)
+\psplot[linecolor=blue]{0.5}{3.1}{(x-1.8)^2+0.5}
+\psline[linecolor=red,linestyle=dashed](0.9,0)(0.9,1.31)(0,1.31)
+\psline[linecolor=red,linestyle=dashed](2.9,0)(2.9,1.71)(0,1.71)
+\psline[linecolor=green]{<->}(0.9,1.31)(2.9,1.71)
+\psxTick[ticksize=-3pt 0,labelsep=3pt](0.9){x_1}
+\psxTick[ticksize=-3pt 0,labelsep=3pt](2.9){x_2}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1.31){f(x_1)}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1.71){f(x_2)}
+\end{pspicture*}

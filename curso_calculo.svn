@@ -1,0 +1,19 @@
+% SVN Keyword cache
+
+% Global values:
+\def \svnrev {6}
+\def \svndate {2008-07-09 16:26:20 +0200 (mi�, 09 jul 2008)}
+\def \svnauthor {asalber}
+\def \svnyear {2008}
+\def \svnmonth {07}
+\def \svnday {09}
+\def \svnhour {16}
+\def \svnminute {26}
+\def \svnsecond {20}
+\def \svntimezonehour {+02}
+\def \svntimezoneminute {00}
+\svn@gdefverb \svnurl {https://ejercicioscalculo.googlecode.com/svn/trunk/compendio_ejercicios_calculo.tex}
+\svn@gdefverb \svnfname {compendio_ejercicios_calculo.tex}
+
+
+

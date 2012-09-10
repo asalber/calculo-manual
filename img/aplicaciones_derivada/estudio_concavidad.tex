@@ -1,0 +1,34 @@
+\psset{unit=0.8,algebraic}
+\begin{pspicture*}(-5,-6)(5,2.1)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-2.5,-4.1)(2.5,2.1)
+\psplot[linecolor=blue]{-1.5}{1.5}{x^4-2*x^2+1}
+\psplot[linecolor=red]{-1.2}{1.2}{4*x^3-4*x}
+\psplot[linecolor=green]{-1.2}{1.2}{12*x^2-4}
+\footnotesize
+\rput[r](-1.5,1.9){\textcolor{blue}{$f(x)=x^4-2x^2+1$}}
+\rput[r](-1.5,-1.5){\textcolor{red}{$f'(x)=4x^3-4x$}}
+\rput[l](1,-2){\textcolor{green}{$f''(x)=12x^2-4$}}
+\uncover<2->{
+\psaxes[ticksize=-3pt 0,labelsep=2pt]{<->}(0,-5)(-2.5,-5)(2.5,-5)
+\rput[r](-2,-4.5){Concavidad $f(x)$}
+\rput[r](-2,-5.8){Signo $f''(x)$}
+}
+\uncover<3->{
+\rput[c](-0.5773,-5.8){\textcolor{green}{$0$}}
+\psline[linecolor=gray,linestyle=dashed](-0.5773,-5.5)(-0.5773,2)
+\rput[c](0.5773,-5.8){\textcolor{green}{$0$}}
+\psline[linecolor=gray,linestyle=dashed](0.5773,-5.5)(0.5773,2)
+}
+\uncover<4->{
+\rput[c](-1.2,-5.8){\textcolor{green}{$+$}}
+\rput[c](-1.2,-4.5){\textcolor{blue}{$\cup$}}
+}
+\uncover<5->{
+\rput[c](0,-5.8){\textcolor{green}{$-$}}
+\rput[c](0,-4.5){\textcolor{blue}{$\cap$}}
+}
+\uncover<6->{
+\rput[c](1.2,-5.8){\textcolor{green}{$+$}}
+\rput[c](1.2,-4.5){\textcolor{blue}{$\cup$}}
+}
+\end{pspicture*}

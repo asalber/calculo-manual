@@ -1,0 +1,10 @@
+\psset{unit=0.7,algebraic}
+\begin{pspicture*}(-5,-3)(5,3)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-3,-3)(3,3)
+\psplot[linecolor=blue]{-2}{2}{x^2-2}
+\normalsize
+\rput[l](1,2.5){$f(x)=x^2-2$}
+\uncover<2->{
+\psline[linecolor=red,linewidth=1pt,tbarsize=7pt 0,arrows=[->](0,-2)(0,3)
+}
+\end{pspicture*}

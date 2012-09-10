@@ -1,0 +1,127 @@
+% Desarrollado por Alfredo Sánchez Alberca (asalber@gmail.com)
+\documentclass[mathserif,profesionalfont,10pt,dvips,blue,xcolor=table]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{svn-multi}
+% Version control information:
+\svnidlong
+{$HeadURL: https://ejercicioscalculo.googlecode.com/svn/trunk/compendio_ejercicios_calculo.tex $}
+{$LastChangedDate: 2008-07-09 16:26:20 +0200 (mi�, 09 jul 2008) $}
+{$LastChangedRevision: 6 $}
+{$LastChangedBy: asalber $}
+%\svnid{$Id: compendio_ejercicios_calculo.tex 6 2008-07-09 14:26:20Z asalber $}
+
+\usepackage{pxfonts}
+%\usepackage{lucidaso}
+%\usepackage{eulervm}
+%\usepackage{mathpazo}
+%\renewcommand{\rmdefault}{ibh}
+\setbeamersize{text margin left=.5cm, text margin right=.5cm}
+
+%\usetheme[width=0pt,height=20pt,hideallsubsections]{PaloAlto}
+%\useoutertheme[width=0pt,height=30pt,hideallsubsections]{sidebar}
+\useoutertheme{default}
+\useinnertheme[shadow]{rounded}
+%\useoutertheme{shadow}
+%\usecolortheme[named=red]{structure}
+%\useinnertheme[shadow]{rounded}
+%\usecolortheme{sidebartab}
+%\usecolortheme[overlystylish]{albatross}
+%\usecolortheme{crane}
+%\usecolortheme{lily}
+\usecolortheme{whale}
+\usecolortheme{rose}
+%\setbeamercovered{transparent}
+
+%\beamertemplateshadingbackground{blue!10}{yellow!10}
+\beamertemplateballitem
+\beamertemplatenavigationsymbolsempty
+
+%Notas de las diapositvas
+\setbeameroption{show notes}
+\setbeamertemplate{note page}[plain]
+\setbeamerfont{note page}{size=\scriptsize}
+
+%Pie de diapositiva
+\usefoottemplate{\vbox{%
+\tinycolouredline{structure}%
+{\color{white}\textbf{\inserttitle\hfill%
+%\insertshortinstitute\hfill
+\insertframenumber{} / \inserttotalframenumber
+}}%
+}}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{pst-all,pst-math,pst-plot,pst-infixplot,pst-xkey,pstricks-add}
+\usepackage{pst-solides3d}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{pdfautor={Alfredo S\'anchez Alberca (asalber@ceu.es)}, pdftitle={Curso b\'asico de C\'alculo}}
+\usepackage{breakurl}
+
+\usepackage[spanish]{babel}
+
+%\usepackage{macros}
+\definecolor{vollgrau}{rgb}{0.9,0.9,0.9}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{1,0.5,0}
+\definecolor{colString}{rgb}{0,0.5,0}
+
+\setlength{\parskip}{0.5em}
+
+\theoremstyle{definition}
+\newtheorem{definicion}[theorem]{\translation{Definición}}
+\newtheorem{teorema}[theorem]{\translation{Teorema}}
+
+
+%---------------------------------------------------------------------cover----
+\title{Curso Básico de Cálculo}
+\author[]{
+Santiago Angulo Díaz-Parreo (\texttt{sangulo@ceu.es})\\ 
+José Rojo Montijano (\texttt{\url{jrojo.eps@ceu.es}})\\
+Anselmo Romero Limón (\texttt{arlimon@ceu.es})\\
+Alfredo Sánchez Alberca (\texttt{asalber@ceu.es})\\ 
+}
+\institute[USP CEU]{
+\includegraphics[scale=0.2]{img/logo_uspceu_01}\\[0.5cm]Facultad de Farmacia
+}
+\date{Curso 2011-2012\\ \textcopyleft Copyleft}
+\begin{document}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Licencia \includegraphics[scale=0.06]{img/cc-logo}}
+\input{licencia}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Contenidos}
+\setlength{\parskip}{0em}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\include{funciones_elementales}
+\include{limites_continuidad}
+\include{derivadas_diferencial}
+\include{aplicaciones_derivada}
+\include{derivadas_parciales}
+\include{integrales}
+\include{aplicaciones_integral}
+\include{ecuaciones_diferenciales}
+\include{medida_error}
+\end{document}

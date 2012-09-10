@@ -1,0 +1,14 @@
+\psset{unit=0.9,algebraic}
+\begin{pspicture*}(-2.5,-0.5)(4.5,3.5)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-0.3,-0.5)(2,3.5)
+\psplot[linecolor=blue]{0.2}{1.5}{x^3-x^2+x+0.5}
+\footnotesize
+\rput[r](1.4,3.3){$f(x)$}
+\psxTick[ticksize=-3pt 0,labelsep=3pt](1){a}
+\psline[linewidth=0.5pt,linestyle=dashed,linecolor=gray](1,0)(1,1.5)(0,1.5)
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1.5){f(a)}
+\psplot[linecolor=red]{0.2}{1.8}{2*x-0.5}
+\psplot[linecolor=red]{0.2}{1.8}{2-0.5*x}
+\rput[l](1.6,2.5){$y=f(a)+f'(a)(x-a)$}
+\rput[l](1.6,0.8){$y=f(a)-\dfrac{1}{f'(a)}(x-a)$}
+\end{pspicture*}

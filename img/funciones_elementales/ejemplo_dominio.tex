@@ -1,0 +1,11 @@
+\psset{unit=0.8,algebraic}
+\begin{pspicture*}(-5,-0.5)(5,4)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-3.3,-0.5)(3.3,4)
+\psplot[linecolor=blue]{-3}{-1.00001}{1/sqrt(x^2-1)}
+\psplot[linecolor=blue]{1.00001}{3}{1/sqrt(x^2-1)}
+\rput[l](1.3,2){$f(x)=\dfrac{1}{\sqrt{x^2-1}}$}
+\uncover<2->{
+\psline[linecolor=red,linewidth=1pt,tbarsize=7pt 0]{<-)}(-3.3,0)(-1,0)
+\psline[linecolor=red,linewidth=1pt,tbarsize=7pt 0]{(->}(1,0)(3.3,0)
+}
+\end{pspicture*}

@@ -1,0 +1,23 @@
+\psset{unit=0.35}
+%\psset{lightsrc=30 -10 10,linewidth=0.5\pslinewidth}
+\psset{viewpoint=50 50 30 rtp2xyz,Decran=50}
+\begin{pspicture}(-7,-8)(7,8)
+\psset{solidmemory}
+\psSolid[object=plan,definition=equation,args={[0 1 0 -1]},base=-5 5 -5 5,name=P]
+\psSurface[ngrid=.25 .25,fillcolor=blue!50,incolor=yellow,linewidth=0.5\pslinewidth,algebraic,intersectiontype=0,intersectionplan=P,intersectionlinewidth=2,intersectioncolor=(rouge)](-4,-4)(4,4){((x^2)-(y^2))/4+2}
+\axesIIID(2,4,3)(7,7,7)
+%\psPoint(3,3,4.5){p}
+%\psPoint(3,0,0){px}
+%\psPoint(0,3,0){py}
+%\psPoint(0,0,3){pz}
+%\psPoint(3,3,0){pxy}
+%\psdots[linecolor=red](p)
+%\psline[linestyle=dashed,linecolor=gray](px)(pxy)
+%\psline[linestyle=dashed,linecolor=gray](py)(pxy)
+%\psline[linestyle=dashed,linecolor=gray](p)(pxy)
+%\psline[linestyle=dashed,linecolor=gray](p)(pz)
+%\uput[r](p){$(x_0,y_0,z_0)$}
+%\uput[r](px){$x_0$}
+%\uput[l](py){$y_0$}
+%\uput[r](pz){$z_0$}
+\end{pspicture}

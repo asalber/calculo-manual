@@ -1,0 +1,7 @@
+\psset{unit=0.3}
+\psset{lightsrc=30 -10 10}
+\psset{viewpoint=100 20 20 rtp2xyz,Decran=80}
+\begin{pspicture}(-10,-10)(7,12)
+\psSurface[ngrid=0.4
+0.4,algebraic,Zmin=-2,Zmax=10,QZ=4,linewidth=0.25\pslinewidth,hue=0 1,linecolor=gray](-13,-13)(13,13){10*sin(sqrt((x^2+y^2)))/(sqrt(x^2+y^2))} \axesIIID(13,13,10)(14,14,12)
+\end{pspicture}

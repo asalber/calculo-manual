@@ -1,0 +1,9 @@
+\psset{unit=0.6,algebraic}
+\begin{pspicture*}(-8,-2)(8,4)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-3,-2)(3,4)
+\psplot[linecolor=blue]{-3}{3}{2*x^2+x-1}
+\psplot[linecolor=red]{-3}{3}{x^3-x^2-2*x+2}
+\footnotesize
+\rput[l](-6,2){$f(x)=2x^2+x-1$}
+\rput[l](-7.5,-1.5){$g(x)=x^3-x^2-2x+2$}
+\end{pspicture*}

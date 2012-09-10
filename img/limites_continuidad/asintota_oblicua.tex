@@ -1,0 +1,10 @@
+\psset{unit=0.5,algebraic}
+\begin{pspicture*}(-4,-3)(6,6)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-4,-3)(6,6)
+\psplot[linecolor=blue]{-4}{0.9999}{x^2/(x-1)}
+\psplot[linecolor=blue]{1.0001}{6}{x^2/(x-1)}
+\psplot[linecolor=red]{-4}{6}{x+1}
+\footnotesize
+\rput[l](1.5,-2){$f(x)=\dfrac{x^2}{x-1}$}
+\rput[l](3,3){$y=x+1$}
+\end{pspicture*}

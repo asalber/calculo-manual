@@ -1,0 +1,10 @@
+\psset{unit=0.45,algebraic}
+\begin{pspicture*}(-3,-3)(7,5)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-3,-3)(7,5)
+\psplot[linecolor=blue]{-3}{1.9999}{(x+1)/(x-2)}
+\psplot[linecolor=blue]{2.0001}{7}{(x+1)/(x-2)}
+\psline[linecolor=red](2,-3)(2,5)
+\footnotesize
+\rput[l](3.5,4){$f(x)=\dfrac{x+1}{x-2}$}
+\rput[l](2.1,-2){$x=2$}
+\end{pspicture*}

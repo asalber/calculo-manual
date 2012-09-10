@@ -1,0 +1,21 @@
+\psset{unit=1.4,algebraic}
+\begin{pspicture*}(-1,-0.5)(2,2)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-0.5,-0.5)(2,2)
+\psplot[linecolor=blue]{0.4}{1.6}{x^1.5}
+\footnotesize
+\psxTick[ticksize=-3pt 0,labelsep=3pt](1){a}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1){l}
+\psline[linecolor=red,linestyle=dotted](1,0)(1,1)(0,1)
+\uncover<2->{
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1.6565){l+\varepsilon}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](0.4648){l-\varepsilon}
+}
+\uncover<3->{
+\psline[linecolor=red,linestyle=dashed](1.4,0)(1.4,1.6565)(0,1.6565)
+\psline[linecolor=red,linestyle=dashed](0.6,0)(0.6,0.4648)(0,0.4648)
+}
+\uncover<4->{
+\psxTick[ticksize=-3pt 0,labelsep=3pt](1.4){a+\delta}
+\psxTick[ticksize=-3pt 0,labelsep=3pt](0.6){a-\delta}
+}
+\end{pspicture*}

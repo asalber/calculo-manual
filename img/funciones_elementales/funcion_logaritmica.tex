@@ -1,0 +1,11 @@
+\psset{unit=0.7,algebraic}
+\begin{pspicture*}(-3,-3)(5.5,3)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-2,-3)(4,3)
+\psplot[linecolor=blue]{0.0001}{4}{ln(x)}
+\psplot[linecolor=blue]{0.0001}{4}{ln(x)/ln(10)}
+\psplot[linecolor=blue]{0.0001}{4}{ln(x)/ln(0.5)}
+\footnotesize
+\rput[l](2,1.5){$f(x)=\ln x$}
+\rput[l](3.5,0.3){$f(x)=\log_{10}x$}
+\rput[l](0.3,2.7){$f(x)=\log_{1/2}x$}
+\end{pspicture*}
