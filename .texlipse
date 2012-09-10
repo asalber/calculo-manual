@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Sep 10 13:07:52 CEST 2012
+markTmpDer=true
+builderNum=6
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=curso_calculo.tex
+outputFile=curso_calculo.pdf
+langSpell=es
+markDer=true
+srcDir=
