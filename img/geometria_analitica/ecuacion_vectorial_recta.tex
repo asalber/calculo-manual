@@ -1,0 +1,16 @@
+\psset{unit=1}
+\psset{viewpoint=40 20 20,Decran=40}
+\begin{pspicture}(0,0)(2,2)
+\axesIIID(0,0,0)(3,3,3)
+\psPoint(0,0,0){O}
+\psPoint(1,1,2){P}
+\psPoint(0,3,3){v}
+\psSolid[object=line,args=2 -1 1 -1 5 4]
+\psSolid[object=point,args=1 1 2]
+\psline[linecolor=red]{->}(P)(v)
+\uput[d](P){$P$}
+\psPoint(0.5,2,2.5){v2}
+\uput[u](v2){$\mathbf{v}$}
+\psPoint(-1,5,4){l}
+\uput[r](l){$l$}
+\end{pspicture}

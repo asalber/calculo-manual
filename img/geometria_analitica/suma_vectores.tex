@@ -1,0 +1,21 @@
+\psset{unit=1,algebraic}
+\begin{pspicture}(-0.5,-0.5)(5,4)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-0.5,-0.5)(5,4)[$x$,-90][$y$,180]
+\psline{->}(0,0)(3,1)
+\rput(1.6,0.3){$\mathbf{u}$}
+\psline[linestyle=dashed, linecolor=gray](3,0)(3,1)(0,1)
+\psxTick[ticksize=-3pt 0,labelsep=3pt](3){u_1}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1){u_2}
+\psline{->}(0,0)(1,2)
+\rput(0.4,1.2){$\mathbf{v}$}
+\psline[linestyle=dashed, linecolor=gray](1,0)(1,2)(0,2)
+\psxTick[ticksize=-3pt 0,labelsep=3pt](1){v_1}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](2){v_2}
+\psline[linecolor=red]{->}(0,0)(4,3)
+\rput(2,1.6){$\mathbf{u}+\mathbf{v}$}
+\psline[linestyle=dashed, linecolor=gray](4,0)(4,3)(0,3)
+\psxTick[ticksize=-3pt 0,labelsep=3pt](4){u_1+v_1}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](3){u_2+v_2}
+\psline[linestyle=dashed, linecolor=gray](3,1)(4,3)
+\psline[linestyle=dashed, linecolor=gray](1,2)(4,3)
+\end{pspicture}

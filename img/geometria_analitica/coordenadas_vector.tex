@@ -1,0 +1,19 @@
+\psset{unit=1,algebraic}
+\begin{pspicture}(-4,-2.5)(4,2.5)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-4,-2.5)(4,2.5)
+\psline{->}(2,1.5)(4,2.5)
+\rput(1.8,1.4){$A$}
+\rput(4.2,2.6){$B$}
+\psline{->}(-3,0.5)(-1,1.5)
+\rput(-3.2,0.4){$C$}
+\rput(-0.8,1.6){$D$}
+\psline{->}(-1,-2)(1,-1)
+\rput(-1.2,-2.1){$E$}
+\rput(1.2,-0.9){$F$}
+\psline[linecolor=red]{->}(0,0)(2,1)
+\rput(1,0.6){$\mathbf{v}$}
+\psline[linestyle=dashed, linecolor=gray](2,0)(2,1)(0,1)
+\psxTick[ticksize=-3pt 0,labelsep=3pt](2){x}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1){y}
+\rput[l](3,0.5){${\mathbf{v}} = (x,y) = \vec{AB}=\vec{CD}=\vec{EF}$}
+\end{pspicture}

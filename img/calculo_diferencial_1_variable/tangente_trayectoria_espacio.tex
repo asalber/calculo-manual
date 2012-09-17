@@ -1,0 +1,36 @@
+% \psset{unit=1, viewpoint=40 30 5,Decran=60}
+% \begin{pspicture}(-6,-3)(6,4)
+% \axesIIID(0,0,0)(4,4,4)
+% \defFunction[algebraic]{helice}(t){3*cos(4*t)}{3*sin(4*t)}{t}
+% \psSolid[object=courbe,
+%  r=0,
+%  range=0 6,
+%  linecolor=red,
+%  resolution=360,
+%  function=helice]%
+% \end{pspicture}
+
+
+% \psset{unit=1,viewpoint=40 10 5,Decran=40}
+% \begin{pspicture}(-3,-3)(5,4)
+% \psPoint(1,1,1){P}
+% \uput[l](P){$P$}
+% \defFunction[algebraic]{foo}(t){cos(t)}{sin(t)}{t}
+% \psSolid[object=courbe,r=0,range=0 6,linewidth=0.1,resolution=360,function=foo]
+% \psSolid[object=point,args=1 0 0]
+% \axesIIID(0,0,0)(5,4,3.5)
+% \end{pspicture}
+
+%\psset{coorType=1,Alpha=135}
+%\psset{coorType=4,IIIDxTicksPlane=yz}
+\psset{Alpha=60,Beta=30}
+\begin{pspicture}(-3,-2)(4,3.2)
+\pstThreeDCoor[IIIDticks,xMax=2,yMax=2,zMax=3,linecolor=black]
+\parametricplotThreeD[xPlotpoints=200, linewidth=1.5pt, linecolor=blue, plotstyle=curve, algebraic](0,3.14){cos(t) | sin(t) | t}
+\parametricplotThreeD[xPlotpoints=10, linecolor=red, algebraic](-1.5,1.7){-t | 1 | t+1.57}
+\pstThreeDDot[drawCoor=true](0,1,1.57)
+\pstThreeDLine[arrows=->,linecolor=green](0,1,1.57)(-1,1,2.57)
+\pstThreeDPut[pOrigin=l](0,1.1,1.57){$P=(0,1,\pi/2)$}
+\pstThreeDPut[pOrigin=l](-1,1.1,2.57){$\mathbf{v}$}
+\pstThreeDPut[pOrigin=l](-1.7,1.1,3.27){$l$}
+\end{pspicture}

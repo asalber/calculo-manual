@@ -1,0 +1,12 @@
+\psset{unit=1,algebraic}
+\begin{pspicture}(-0.5,-0.5)(5,5)
+\psaxes[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=2pt]{<->}(0,0)(-0.5,-0.5)(5,5)[$x$,-90][$y$,180]
+\psdot(3,4)
+\psline[linestyle=dashed, linecolor=gray](3,0)(3,4)(0,4)
+\rput[l](3.1,4){$Q$}
+\psdot(2,1)
+\psline[linestyle=dashed, linecolor=gray](2,0)(2,1)(0,1)
+\rput[l](2.1,1){$P$}
+\psline[linecolor=red]{->}(2,1)(3,4)
+\rput[r](2.4,2.5){$\vec{PQ}$}
+\end{pspicture}

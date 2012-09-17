@@ -1,0 +1,22 @@
+\psset{unit=1,algebraic}
+\begin{pspicture*}(-0.5,-0.5)(5.2,4.2)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-0.5,-0.5)(5,4)[$x$,-90][$y$,180]
+\psdot(4,3)
+\psline[linestyle=dashed, linecolor=gray](4,0)(4,3)(0,3)
+\rput[l](4.1,2.9){$Q$}
+\psdot(1,1)
+\psline[linestyle=dashed, linecolor=gray](1,0)(1,1)(0,1)
+\rput[u](1,1.2){$P$}
+\psline(-2,-1)(7,5)
+\psline[linecolor=red]{->}(1,1)(4,3)
+\rput[r](2.5,2.5){$\vec{PQ}$}
+\psline[linestyle=dashed, linecolor=orange](1,1)(4,1)(4,3)
+\psxTick[ticksize=-3pt 0,labelsep=3pt](1){x_1}
+\psxTick[ticksize=-3pt 0,labelsep=3pt](4){x_2}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1){y_1}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](3){y_2}
+\rput[u](2.5,0.8){$x_2-x_1$}
+\rput[l](4.1,2){$y_2-y_1$}
+\rput[l](4.1,2){$y_2-y_1$}
+\rput[l](4.7,3.7){$l$}
+\end{pspicture*}

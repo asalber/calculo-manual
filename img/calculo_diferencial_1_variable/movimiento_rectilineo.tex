@@ -1,0 +1,20 @@
+\psset{unit=1,algebraic}
+\begin{pspicture*}(-5,-1.6)(5,1.5)
+\psaxes[ticks=none,labels=none]{-}(0,0)(-0.5,0)(4,0)
+\rput[b](2,1){Posición}
+\psdot(3,0)
+\psline[linecolor=blue]{->}(0,0)(3,0)
+\psline[linecolor=red]{->}(0,0)(1,0)
+\rput[b](0.5,0.1){$\mathbf{i}$}
+\rput[b](3,0.1){$P$}
+\rput[l](4.1,0){$\mathbb{R}$}
+\psxTick[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=4pt](0){O}
+\psxTick[labelFontSize=\scriptstyle,ticksize=-3pt 0,labelsep=4pt](1){1}
+\psxTick[ticksize=-3pt 0,labelsep=4pt](3){}
+\rput[l](2.9,-0.3){$x=f(t)$}
+\psline(-4,0)(-2,0)
+\rput[b](-3,1){Tiempo}
+\psxTick[ticksize=-3pt 0,labelsep=4pt](-3){t}
+\psbezier[linestyle=dashed]{->}(-2.5,-0.3)(-1,-1)(1,-1)(2.5,-0.3)
+\rput[t](0,-1){$f$}
+\end{pspicture*}

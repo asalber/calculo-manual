@@ -1,0 +1,14 @@
+\psset{unit=1,viewpoint=40 10 5,Decran=40}
+\begin{pspicture}(-3,-3)(5,4)
+\psSolid[object=plan, definition=normalpoint, args={1 1 1 [1 2 2]}, fillcolor=cyan, base=-2 2 -2 2]
+\psSolid[object=point,args=1 1 1]
+\psPoint(1,1,1){P}
+\uput[l](P){$P$}
+\psPoint(1,2,0){Q}
+\uput[d](Q){$Q$}
+\psline{->}(P)(Q)
+\psPoint(1,2,2){v}
+\uput[r](v){$\mathbf{v}$}
+\psline[linecolor=red]{->}(P)(v)
+\axesIIID(0,0,0)(5,4,3.5)
+\end{pspicture}

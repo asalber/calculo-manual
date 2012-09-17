@@ -1,0 +1,15 @@
+\psset{unit=1}
+\psset{viewpoint=40 20 20 , Decran=50}
+\begin{pspicture}(-0.5,-0.5)(2,2)
+\axesIIID(0,0,0)(2,2,2)
+\psPoint(0,0,0){O}
+\psPoint(1,0,0){i}
+\psPoint(0,1,0){j}
+\psPoint(0,0,1){k}
+\psline[linecolor=red]{->}(O)(i)
+\uput[r](i){$\mathbf{i}$}
+\psline[linecolor=red]{->}(O)(j)
+\uput[u](j){$\mathbf{j}$}
+\psline[linecolor=red]{->}(O)(k)
+\uput[r](k){$\mathbf{k}$}
+\end{pspicture}

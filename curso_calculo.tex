@@ -1,14 +1,6 @@
 % Desarrollado por Alfredo Sánchez Alberca (asalber@gmail.com)
-\documentclass[mathserif,profesionalfont,10pt,dvips,blue,xcolor=table]{beamer}
+\documentclass[trans,mathserif,profesionalfont,10pt,dvips,blue,xcolor=table]{beamer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{svn-multi}
-% Version control information:
-\svnidlong
-{$HeadURL: https://ejercicioscalculo.googlecode.com/svn/trunk/compendio_ejercicios_calculo.tex $}
-{$LastChangedDate: 2008-07-09 16:26:20 +0200 (mi�, 09 jul 2008) $}
-{$LastChangedRevision: 6 $}
-{$LastChangedBy: asalber $}
-%\svnid{$Id: compendio_ejercicios_calculo.tex 6 2008-07-09 14:26:20Z asalber $}
 
 \usepackage{pxfonts}
 %\usepackage{lucidaso}
@@ -46,17 +38,22 @@
 \tinycolouredline{structure}%
 {\color{white}\textbf{\inserttitle\hfill%
 %\insertshortinstitute\hfill
-\insertframenumber{} / \inserttotalframenumber
+\insertframenumber{} 
+%/ \inserttotalframenumber
 }}%
 }}
 
 \usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{textcomp}
 \usepackage[usenames,dvipsnames]{pstricks}
 \usepackage{pst-all,pst-math,pst-plot,pst-infixplot,pst-xkey,pstricks-add}
 \usepackage{pst-solides3d}
+\usepackage{pst-3dplot}
 \usepackage{epsfig}
 \usepackage{graphicx}
 \usepackage{colortbl}
@@ -91,7 +88,7 @@ Alfredo Sánchez Alberca (\texttt{asalber@ceu.es})\\
 \institute[USP CEU]{
 \includegraphics[scale=0.2]{img/logo_uspceu_01}\\[0.5cm]Facultad de Farmacia
 }
-\date{Curso 2011-2012\\ \textcopyleft Copyleft}
+\date{Curso 2012-2013\\ \textcopyleft Copyleft}
 \begin{document}
 
 
@@ -115,13 +112,13 @@ Alfredo Sánchez Alberca (\texttt{asalber@ceu.es})\\
 \tableofcontents[hideallsubsections]
 \end{frame}
 
+\include{geometria_analitica}
 \include{funciones_elementales}
 \include{limites_continuidad}
-\include{derivadas_diferencial}
-\include{aplicaciones_derivada}
-\include{derivadas_parciales}
-\include{integrales}
-\include{aplicaciones_integral}
-\include{ecuaciones_diferenciales}
-\include{medida_error}
+\include{calculo_diferencial_1_variable}
+% \include{calculo_diferencial_n_variables}
+% \include{integrales}
+% \include{aplicaciones_integral}
+% \include{ecuaciones_diferenciales}
+% \include{medida_error}
 \end{document}

@@ -1,0 +1,14 @@
+\psset{unit=1,algebraic}
+\begin{pspicture}(-0.5,-0.5)(5,3)
+\psaxes[ticks=none,labels=none]{<->}(0,0)(-0.5,-0.5)(5,3)[$x$,-90][$y$,180]
+\psline[linecolor=red]{->}(0,0)(4,2)
+\rput(2.2,1.3){$a\mathbf{v}$}
+\psline[linestyle=dashed, linecolor=gray](4,0)(4,2)(0,2)
+\psxTick[ticksize=-3pt 0,labelsep=3pt](4){av_1}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](2){av_2}
+\psline{->}(0,0)(2,1)
+\rput(0.9,0.7){$\mathbf{v}$}
+\psline[linestyle=dashed, linecolor=gray](2,0)(2,1)(0,1)
+\psxTick[ticksize=-3pt 0,labelsep=3pt](2){v_1}
+\psyTick[ticksize=-3pt 0,labelsep=3pt](1){v_2}
+\end{pspicture}

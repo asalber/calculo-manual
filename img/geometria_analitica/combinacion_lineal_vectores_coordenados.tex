@@ -1,0 +1,36 @@
+\psset{unit=1}
+\psset{viewpoint=40 20 20,Decran=50}
+\begin{pspicture}(0,0)(3,3)
+\axesIIID(0,0,0)(3,3,3)
+\psPoint(0,0,0){O}
+\psPoint(1,0,0){i}
+\psPoint(0,1,0){j}
+\psPoint(0,0,1){k}
+\psPoint(1,2,3){v}
+\psline[linecolor=red]{->}(O)(i)
+\uput[r](i){$\mathbf{i}$}
+\psline[linecolor=red]{->}(O)(j)
+\uput[u](j){$\mathbf{j}$}
+\psline[linecolor=red]{->}(O)(k)
+\uput[r](k){$\mathbf{k}$}
+\psline[linecolor=blue]{->}(O)(v)
+\psPoint(1,1.4,2){v2}
+\uput[r](v2){$\mathbf{v}$}
+\psPoint(1,2,0){xy}
+\psPoint(0,2,0){j2}
+\psline[linestyle=dashed, linecolor=gray](i)(xy)(j2)
+\psline[linestyle=dashed, linecolor=gray](xy)(v)
+\psPoint(1,0,3){xz}
+\psPoint(0,0,3){k3}
+\psline[linestyle=dashed, linecolor=gray](i)(xz)(k3)
+\psline[linestyle=dashed, linecolor=gray](xz)(v)
+\psPoint(0,2,3){yz}
+\psline[linestyle=dashed, linecolor=gray](j2)(yz)(k3)
+\psline[linestyle=dashed, linecolor=gray](yz)(v)
+\psPoint(1,1,0){a}
+\uput[d](a){$v_2$}
+\psPoint(0.8,2,0){b}
+\uput[r](b){$v_1$}
+\psPoint(0,2,1.5){c}
+\uput[r](c){$v_3$}
+\end{pspicture}
