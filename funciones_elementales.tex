@@ -1,13 +1,8 @@
-%Version control information
-%$HeadURL: https://ejercicioscalculo.googlecode.com/svn/trunk/compendio_ejercicios_calculo.tex $} {$LastChangedDate: 2008-07-09 16:26:20 +0200 (mi�, 09 jul 2008) $
-%$LastChangedRevision: 6 $
-%$LastChangedBy: asalber $
-
-\section{Funciones Elementales}
+\section{Funciones reales de variable real}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Funciones Elementales}
+\frametitle{Funciones reales de variable real}
 \setlength{\parskip}{0.3em}
 \tableofcontents[sectionstyle=show/hide,hideothersubsections]
 \end{frame}
@@ -28,7 +23,7 @@ f:\,&A\longrightarrow B\\
 \begin{center}
 \scalebox{1}{\input{img/funciones_elementales/definicion_funcion}}
 \end{center}
-Cuando el conjunto origen y destino es el de los números reales $\mathbb{R}$, entonces se dice que 
+Cuando el conjunto inicial y final es el de los números reales $\mathbb{R}$, entonces se dice que 
 $f:\mathbb{R}\rightarrow \mathbb{R}$ es una \emph{función real de variable real}.
 \end{frame}
 
@@ -39,7 +34,7 @@ $f:\mathbb{R}\rightarrow \mathbb{R}$ es una \emph{función real de variable real
 \begin{columns}
 \begin{column}{.48\textwidth}
 \textbf{Por extensión}
-\begin{block}{Representación en forma de tabla}
+\begin{block}{Representación en tabla}
 \[
 \begin{array}{|c|c|c|c|c|c|c|}
 \hline
@@ -52,7 +47,7 @@ $f:\mathbb{R}\rightarrow \mathbb{R}$ es una \emph{función real de variable real
 \end{block}
 \begin{block}{Representación gráfica}
 \begin{center}
-\scalebox{1}{\input{img/funciones_elementales/funcion_cuadrado}}
+\scalebox{0.7}{\input{img/funciones_elementales/funcion_cuadrado}}
 \end{center}
 \end{block}
 \end{column}
@@ -121,7 +116,7 @@ Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}
 \structure{\bfseries Ejemplo}
 \begin{center}
 \scalebox{1}{\input{img/funciones_elementales/ejemplo_imagen}}\\
-$\mbox{Img}(f)=(-2,\infty)$
+$\mbox{Img}(f)=[-2,\infty)$
 \end{center}
 \end{frame} 
 
@@ -156,7 +151,7 @@ f\circ g(x)=f(g(x))=f(\sqrt x)=\sen \sqrt x.
 \begin{frame}
 \frametitle{Inversa de una función}
 \begin{definicion}[Función inversa]
-Se llama \emph{función inversa} de $f:A\rightarrow B$ a la función $f^{-1}:B\rightarrow A$ que cumple
+Se llama \emph{función inversa} de $f:A\rightarrow B$ a la función $f^{-1}:B\rightarrow A$ (cuando exista) que cumple
 \[
 f\circ f^{-1}=f^{-1}\circ f=Id(x)
 \]
@@ -169,15 +164,10 @@ entonces $f^{-1}$ asocia el elemento $y$ con el $x$:
 \scalebox{1}{\input{img/funciones_elementales/funcion_inversa}}
 \end{center}
 
-\alert{¡Ojo! } $f^{-1}\neq \dfrac{1}{f}$. Para que exista $f^{-1}$ se requiere
-que $f$ sea \emph{inyectiva}.
-
 \structure{\textbf{Ejemplo}}
 \begin{itemize}
 \item[--] La inversa de $f(x)=x^3$ es la función $f^{-1}(x)=\sqrt[3]{x}.$ 
-\item[--] La inversa de la función $f(x)=\sen x$ es la función
-$f^{-1}(x)=\arcsen x.$
-\item[--] La función $x^2$ no tienen inversa pues no es inyectiva.
+\item[--] La función $x^2$ no tiene inversa. ¿Por qué?
 \end{itemize}
 \end{frame} 
 
@@ -218,10 +208,10 @@ cumple $f(x_1)\geq f(x_2)$.
 \begin{frame}
 \frametitle{Extremos de una función}
 \begin{definicion}[Máximo y mínimo relativo]
-Se dice que una función $f$ tiene un máximo relativo en $x_0$, si existe un $\delta>0$ tal que para todo $x\in
+Se dice que una función $f$ tiene un \emph{máximo relativo} en $x_0$, si existe un $\delta>0$ tal que para todo $x\in
 (x_0-\delta,x_0+\delta)$ se cumple $f(x_0)\geq f(x)$.
 
-Se dice que una función $f$ tiene un mínimo relativo en $x_0$, si existe un $\delta>0$ tal que para todo $x\in
+Se dice que una función $f$ tiene un \emph{mínimo relativo} en $x_0$, si existe un $\delta>0$ tal que para todo $x\in
 (x_0-\delta,x_0+\delta)$ se cumple $f(x_0)\leq f(x)$.
 \end{definicion}
 
@@ -249,10 +239,10 @@ Se dice que una función $f$ tiene un mínimo relativo en $x_0$, si existe un $\
 \frametitle{Concavidad de una función}
 \begin{definicion}[Función cóncava y convexa]
 Se dice que una función $f$ es \emph{cóncava} en un intervalo $I$, si para todo $x_1,x_2\in I$, con $x_1<x_2$, se cumple
-que el segmento que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por debajo de la gráfica de $f$.
+que el segmento que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por encima de la gráfica de $f$.
 
 Se dice que una función $f$ es \emph{convexa} en un intervalo $I$, si para todo $x_1,x_2\in I$, con $x_1<x_2$, se cumple
-que el segmento que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por encima de la gráfica de $f$.
+que el segmento que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por debajo de la gráfica de $f$.
 
 Al punto donde cambia la concavidad de una función se le llama \emph{punto de inflexión}.
 \end{definicion}
@@ -284,12 +274,12 @@ Se dice que una función $f$ es \emph{periódica} si existe un valor $h>0$ tal q
 \[f(x+h)=f(x)\]
 para todo $x\in \textrm{Dom}(f)$.
 
-Al menor valor de $h$ que verifica la igualdad anterior se le llama \emph{periodo} de $f$, y a la diferencia entre el
+Al menor valor de $h$ que verifica la igualdad anterior se le llama \emph{periodo} de $f$, y a la mitad de la diferencia entre el
 máximo y el mínimo de la función se le llama \emph{amplitud} de $f$.
 \end{definicion}
 
 \begin{center}
-\scalebox{1}{\input{img/funciones_elementales/funcion_periodica}}
+\scalebox{0.8}{\input{img/funciones_elementales/funcion_periodica}}
 \end{center}
 \end{frame} 
 
@@ -358,7 +348,7 @@ Si $f(x)=\dfrac{a_0+\cdots +a_nx^n}{b_0+\cdots+b_mx^m}$, entonces
   \item Si $n=m$ $\rightarrow$ $f(\pm\infty)=\dfrac{a_n}{b_m}$.
 \end{itemize}
 \item Los polinomios son casos particulares de funciones racionales. 
-\item Pueden descomponerse en producto de fracciones simples.
+\item Pueden descomponerse en suma de fracciones simples.
 \end{itemize}
 \end{frame} 
 
@@ -392,7 +382,7 @@ Estas funciones se llaman \emph{irracionales}. En este caso,
 \item si $m$ es impar el dominio es $\mathbb{R}$,
 \item si $m$ es par el dominio es $\mathbb{R}^+$.
 \end{itemize}
-\item Todas las pasan por el punto $(1,1)$.
+\item Todas pasan por el punto $(1,1)$.
 \item El crecimiento depende del exponente. Si $x>0$ entonces:
 \begin{itemize}
 \item Exponente positivo $\Rightarrow$ función creciente.
@@ -433,7 +423,7 @@ donde $a$ es un valor real positivo distinto de 1.
 \begin{itemize}
 \item Su dominio es $\mathbb{R}$.
 \item Su imagen es $\mathbb{R}^+$.
-\item Todas las pasan por el punto $(0,1)$.
+\item Todas pasan por el punto $(0,1)$.
 \item El crecimiento depende de la base. Si $f(x)=a^x$ entonces
 \begin{itemize}
 \item Si $0<a<1$ $\Rightarrow$ función decreciente.
@@ -445,7 +435,7 @@ Además, si $f(x)=a^x$ y $g(x)=b^x$ con $a<b$, entonces
 \item Si $x>0$ $\Rightarrow$ $f(x)<g(x)$.
 \end{itemize}
 
-\item No tiene sentido para $a=1$ por que sería una función constante.
+\item Un caso particular sería $a=1$ que es una función constante.
 \end{itemize}
 \end{frame} 
 
@@ -584,8 +574,8 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 \begin{itemize}
 \item Su dominio es $\mathbb{R}$.
 \item Su imagen es el intervalo $[-1,1]$.
-\item Es periódica, con periodo $2\pi$ y amplitud $2$
-\[\sen (x+2k\pi)= \sen x\quad \forall k\in \mathbb{Z}\]
+\item Es periódica, con periodo $2\pi$ y amplitud $1$
+\[\sen (x+2k\pi)= \sen x\quad \forall k\in \mathbb{Z}.\]
 \item Algunos valores para recordar:
 \[
 \begin{array}{llll}
@@ -651,8 +641,8 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 \begin{itemize}
 \item Su dominio es $\mathbb{R}$.
 \item Su imagen es el intervalo $[-1,1]$.
-\item Es periódica, con periodo $2\pi$ y amplitud $2$
-\[\cos (x+2k\pi)= \cos x\quad \forall k\in \mathbb{Z}\]
+\item Es periódica, con periodo $2\pi$ y amplitud $1$
+\[\cos (x+2k\pi)= \cos x\quad \forall k\in \mathbb{Z}.\]
 \item Algunos valores para recordar:
 \[
 \begin{array}{llll}
@@ -724,9 +714,9 @@ como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes
 \[\tg (x+2k\pi)= \tg x\quad \forall k\in \mathbb{Z}\]
 \item Algunos valores para recordar:
 \[
-\begin{array}{llll}
-\tg 0=0 & \tg \pi/6= 1/\sqrt{3} & \tg \pi/4=1 & \tg \pi/3= \sqrt{3}\\
-\tg \pi/2 =+\infty & \tg \pi =0 & \tg 3\pi/2=-\infty & \tg 2\pi=0
+\begin{array}{lll}
+\tg 0=0 & \tg \pi/6= 1/\sqrt{3} & \tg \pi/4=1 \\
+\tg \pi/3= \sqrt{3} & \tg \pi =0 & \tg 2\pi=0
 \end{array}
 \]
 \end{itemize}

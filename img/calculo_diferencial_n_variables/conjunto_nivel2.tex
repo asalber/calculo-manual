@@ -1,0 +1,18 @@
+\psset{unit=0.6}
+%\psset{lightsrc=30 -10 10,linewidth=0.5\pslinewidth}
+\psset{viewpoint=50 30 30 rtp2xyz,Decran=50}
+\begin{pspicture*}(-4,-2)(4,5)
+%\psSolid[object=grille,base=-4 4 -4 4,action=draw]
+\psSurface[ngrid=.1 .1,incolor=yellow, fillcolor=blue!50, linewidth=0.25\pslinewidth, linecolor=gray,
+ intersectionplan={[0 0 1 -2]},
+ intersectioncolor=(rouge),
+ intersectionlinewidth=2,
+ intersectiontype=0,algebraic](-1.5,-1.5)(1.5,1.5){(x^2+y^2)}
+\axesIIID(0,0,2)(3,3,5)
+\psPoint(1,1,2){p}
+\psPoint(1,1,0){pxy}
+\psdots(p)
+\psdots[linecolor=red](pxy)
+\psline[linestyle=dashed,linecolor=gray](p)(pxy)
+\uput[b](pxy){$P=(1,1)$}
+\end{pspicture*}

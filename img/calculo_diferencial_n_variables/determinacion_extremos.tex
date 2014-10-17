@@ -1,0 +1,18 @@
+\psset{unit=1}
+\psset{viewpoint=50 50 30 rtp2xyz,Decran=50}
+\begin{pspicture*}(-6,-4)(7,4.3)
+%\psSolid[object=grille,base=-4 4 -4 4,action=draw]
+\psSurface[fillcolor=blue!50,ngrid=.25 .25,incolor=yellow,algebraic,linewidth=0.25\pslinewidth,linecolor=gray](-2,-2)(2,2){x^3/3-y^3/3-x+y}
+\axesIIID(0,1,0)(3,3,3)
+\psPoint(1,1,0){p1}
+\psPoint(1,-1,-1.34){p2}
+\psPoint(-1,1,1.34){p3}
+\psPoint(-1,-1,0){p4}
+\psPoint(2,4,5){f}
+\psdots[linecolor=red](p1)(p2)(p3)(p4)
+\uput[r](f){$f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$}
+\uput[r](p1){$(1,1,0)$}
+\uput[d](p2){$(1,-1,-4/3)$}
+\uput[r](p3){$(-1,1,4/3)$}
+\uput[l](p4){$(-1,-1,0)$}
+\end{pspicture*}

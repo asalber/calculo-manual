@@ -1,8 +1,8 @@
-\section{Geometría Analítica del Espacio}
+\section{Geometría analítica}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Geometría Analítica del Plano y  del Espacio Real}
+\frametitle{Geometría analítica}
 \setlength{\parskip}{0.3em}
 \tableofcontents[sectionstyle=show/hide,hideothersubsections]
 \end{frame}
@@ -30,7 +30,7 @@ La descripción del viento requiere dos elementos, su intensidad y su dirección
 \begin{frame}
 \frametitle{Vectores}
 \begin{definicion}[Vector]
-Un \emph{vector} es un número que sirve para expresar una magnitud y tiene asociada una dirección. 
+Un \emph{vector} es un número que sirve para expresar una magnitud y tiene asociada una dirección y un sentido. 
 \end{definicion}
 
 \structure{\bfseries Ejemplos} La velocidad de un móvil o la fuerza que se aplica sobre un objeto.  
@@ -50,7 +50,7 @@ Sin embargo, con independencia de donde esté situado, si la longitud y la direc
 representará siempre el mismo vector.
 
 Esto permite representar todos los vectores con un mismo origen, el origen en sistema de coordenadas cartesianas.
-Así, un vector queda determinado por las \emph{coordenadas} de su extremo final en cualquier espacio cartesiano.
+Así, un vector queda determinado por las \emph{coordenadas} de su extremo final en cualquier espacio euclideo.
 
 \begin{center}
 \scalebox{0.8}{\input{img/geometria_analitica/coordenadas_vector}}
@@ -78,7 +78,7 @@ Sean los puntos $P=(2,1)$  y $Q=(3,4)$ del plano real $\mathbb{R}^2$, entonces
 \begin{frame}
 \frametitle{Módulo de un vector}
 \begin{definicion}[Módulo de un vector]
-Dados un vector $\mathbf{v}=(v_1,\cdots,v_n)$ de $\mathbb{R}^n$, se define el \emph{módulo} de $\mathbf{v}$ como
+Dado un vector $\mathbf{v}=(v_1,\cdots,v_n)$ de $\mathbb{R}^n$, se define el \emph{módulo} de $\mathbf{v}$ como
 \[
 |\mathbf{v}| = \sqrt{v_1^2+ \cdots + v_n^2}.
 \]
@@ -195,18 +195,18 @@ En el caso del espacio real $\mathbb{R}^3$, cualquier vector $\mathbf{v}=(v_1,v_
 Dados dos vectores $\mathbf{u}=(u_1,\cdots,u_n)$ y $\mathbf{v}=(v_1,\cdots,v_n)$ de $\mathbb{R}^n$, se define el
 \emph{producto escalar} de $\mathbf{u}$ y $\mathbf{v}$ como
 \[
-\mathbf{u}\mathbf{v} = u_1v_1 + \cdots + u_nv_n.
+\mathbf{u}\cdot \mathbf{v} = u_1v_1 + \cdots + u_nv_n.
 \]
 \end{definicion}
 \structure{\bfseries Ejemplo} 
 Sean $\mathbf{u}=(3,1)$ y $\mathbf{v}=(2,3)$ dos vectores en $\mathbb{R}^2$, entonces
 \[
-\mathbf{u}\mathbf{v} = 3\cdot 2 +1\cdot 3 = 9.
+\mathbf{u}\cdot\mathbf{v} = 3\cdot 2 +1\cdot 3 = 9.
 \]
 
 Se cumple que
 \[
-\mathbf{u}\mathbf{v} =  |\mathbf{u}||\mathbf{v}|\cos\alpha
+\mathbf{u}\cdot\mathbf{v} =  |\mathbf{u}||\mathbf{v}|\cos\alpha
 \]
 donde $\alpha$ es el ángulo que forman los vectores.
 \end{frame} 
@@ -222,18 +222,12 @@ Dos vectores $\mathbf{u}$ y $\mathbf{v}$ son \emph{paralelos} si existe un valor
 \]
 \end{definicion}
 
-Los vectores paralelos forman un ángulo de $0^\circ$.
-
 \structure{\bfseries Ejemplos} 
 Los vectores $\mathbf{u}=(-4,2)$ y $\mathbf{v}=(2,-1)$ en $\mathbb{R}^2$ son paralelos, ya que
 \[
 \mathbf{v}= (-4,2) = -2(2,-1) = -2\mathbf{v}.
 \]
 
-Si $\mathbf{u}$ y $\mathbf{v}$ son dos vectores paralelos entonces, su producto escalar coincide con el producto de sus módulos
-\[
-\mathbf{u}\mathbf{v} = |\mathbf{u}||\mathbf{v}|\cos 0 = |\mathbf{u}||\mathbf{v}|
-\]
 \end{frame} 
 
 
@@ -243,7 +237,7 @@ Si $\mathbf{u}$ y $\mathbf{v}$ son dos vectores paralelos entonces, su producto 
 \begin{definicion}[Vectores ortogonales y ortonormales]
 Dos vectores $\mathbf{u}$ y $\mathbf{v}$ son \emph{ortogonales} si su producto escalar es nulo
 \[
-\mathbf{u}\mathbf{v} = 0.
+\mathbf{u}\cdot \mathbf{v} = 0.
 \]
 Si además el módulo de ambos vectores es la unidad $|\mathbf{u}|=|\mathbf{v}|=1$, entonces se dice que son \emph{ortonormales}.
 \end{definicion}
@@ -274,7 +268,7 @@ Sea $l$ una recta del espacio $\mathbb{R}^n$ y sean $P=(p_1,\ldots,p_n)$ un punt
 $\mathbf{v}=(v_1,\ldots,v_n)$ un vector cualquiera con la misma dirección que la recta.
 La ecuación
 \[
-l(t) = P + t\mathbf{v} = (p_1,\ldots,p_n)+t(v_1,\ldots,v_n) = (p_1+tv_1,\ldots,p_n+tv_n).
+l: X= P + t\mathbf{v} = (p_1,\ldots,p_n)+t(v_1,\ldots,v_n) = (p_1+tv_1,\ldots,p_n+tv_n).
 \]
 parametriza a $l$ en función de $t\in \mathbb{R}$, y se conoce como \emph{ecuación vectorial de la recta}.
 \end{definicion}
@@ -283,7 +277,7 @@ parametriza a $l$ en función de $t\in \mathbb{R}$, y se conoce como \emph{ecuac
 \structure{\bfseries Ejemplo} 
 Considerese la recta del espacio real $\mathbb{R}^3$ que aparece en la gráfica. Un punto de la recta es $P=(1,1,2)$ y un vector director es $\mathbf{v}=(-1,2,2)$, luego su ecuación vectorial es
 \begin{align*}
-l(t) &=  P + t\mathbf{v} = (1,1,2)+t(-1,2,1) =\\
+l &: X= P + t\mathbf{v} = (1,1,2)+t(-1,2,1) =\\
 &= (1-t,1+2t,2+t)\quad t\in\mathbb{R}.
 \end{align*}
 \end{column}
@@ -299,7 +293,7 @@ l(t) &=  P + t\mathbf{v} = (1,1,2)+t(-1,2,1) =\\
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Ecuaciones paramétricas y cartesianas de la recta}
-De la ecuación vectorial de una recta $l(t) = P + t\mathbf{v}=(p_1+tv_1,\ldots,p_n+tv_n)$ se obtienen facilmente las coordenadas de los puntos que forman parte de la recta mediante $n$ ecuaciones paramétricas:
+De la ecuación vectorial de una recta $l: X=P + t\mathbf{v}=(p_1+tv_1,\ldots,p_n+tv_n)$ se obtienen facilmente las coordenadas de los puntos que forman parte de la recta mediante $n$ ecuaciones paramétricas:
 \[
 x_1(t)=p_1+tv_1, \ldots, x_n(t)=p_n+tv_n
 \]
@@ -309,7 +303,8 @@ donde, si $\mathbf{v}$ es un vector cuyas coordenadas son no nulas ($v_i\neq 0$ 
 \] 
 
 \structure{\bfseries Ejemplo} 
-Dada la ecuación vectorial de la recta $l(t)=(1,1,2)+t(-1,2,1) =(1-t,1+2t,2+t)$ en el espacio real $\mathbf{R^3}$, sus ecuaciones paramétricas son
+Dada la ecuación vectorial de la recta $l: X=(1,1,2)+t(-1,2,1) =(1-t,1+2t,2+t)$ en el espacio real $\mathbb{R^3}$, sus
+ecuaciones paramétricas son
 \[
 x(t) = 1-t, \quad y(t)=1+2t, \quad z(t)=2+t,
 \]
@@ -323,7 +318,8 @@ y sus ecuaciones cartesianas son
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Ecuación punto-pendiente de una recta en el plano}
-En el caso particular del plano cartesiano $\mathbf{R^2}$, si se tiene una recta con ecuación vectorial $l(t)=P+t\mathbf{v}=(x_0,y_0)+t(a,b) = (x_0+ta,y_0+tb)$, sus ecuaciones paramétricas son
+En el caso particular del plano cartesiano $\mathbb{R^2}$, si se tiene una recta con ecuación vectorial $l: X=P+t\mathbf{v}=(x_0,y_0)+t(a,b)
+= (x_0+ta,y_0+tb)$, sus ecuaciones paramétricas son
 \[
 x(t)=x_0+ta,\quad y(t)=y_0+tb
 \]
@@ -343,11 +339,11 @@ llamando $m=b/a$. Esta ecuación se conoce como ecuación en la forma \emph{punt
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Pendiente de una recta en el plano}
-\begin{definicion}{Pendiente de una recta}
-Dada una recta $l(t)=P+t\mathbf{v}$ en el plano real $\mathbb{R}^2$, con vector director $\mathbf{v}=(a,b)$, se define la pendiente de $l$ como $b/a$.
+\begin{definicion}[Pendiente de una recta]
+Dada una recta $l: X=P+t\mathbf{v}$ en el plano real $\mathbb{R}^2$, con vector director $\mathbf{v}=(a,b)$, se define la pendiente de $l$ como $b/a$.
 \end{definicion}
 
-Recordar que dados dos puntos $Q=(x_1,y_1)$ y $Q=(x_2,y_2)$ de la recta $l$, se puede tomar como vector director el vector que los une, que teniene coordenadas $\vec{PQ}=Q-P=(x_2-x_1,y_2-y_1)$, de manera que la pendiente de $l$ será 
+Recordar que dados dos puntos $Q=(x_1,y_1)$ y $Q=(x_2,y_2)$ de la recta $l$, se puede tomar como vector director el vector que los une, que tiene coordenadas $\vec{PQ}=Q-P=(x_2-x_1,y_2-y_1)$, de manera que la pendiente de $l$ será 
 $\dfrac{y_2-y_1}{x_2-x_1}$, es decir, el cociente entre lo que cambia la coordenada $y$ y lo que cambia la coordenada $x$.
 
 \begin{center}
@@ -364,7 +360,7 @@ $\dfrac{y_2-y_1}{x_2-x_1}$, es decir, el cociente entre lo que cambia la coorden
 Para llegar a la ecuación de un plano en el espacio real $\mathbb{R}^3$ se puede partir de un punto del plano $P=(x_0,y_0,z_0)$ y de un vector perpendicular al plano $\mathbf{v}=(a,b,c)$. 
 Entonces, para cualquier punto del plano $Q=(x,y,z)$ se cumple que el vector $\vec{PQ} = (x-x_0,y-y_0,z-z_0)$ es ortogonal a $\mathbf{v}$, por lo que su producto escalar se anulará
 \[
-\vec{PQ}\mathbf{v} = (x-x_0,y-y_0,z-z_0)(a,b,c) = a(x-x_0)+b(y-y_0)+c(z-z_0) = 0.
+\vec{PQ}\cdot\mathbf{v} = (x-x_0,y-y_0,z-z_0)(a,b,c) = a(x-x_0)+b(y-y_0)+c(z-z_0) = 0.
 \]
 
 \begin{center}

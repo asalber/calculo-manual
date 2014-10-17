@@ -247,7 +247,7 @@ La descomposición en fracciones simples es:
 \end{align*}
 e igualando los numeradores tenemos $A=16/9$, $B=-1/3$ y $C=-7/9$, de modo que
 \[
-\frac{x^2+3x-5}{x^3-3x+2}= \frac{16/9}{x-1}+\frac{-1/3}{(x-1)^2}+\frac{-7/9}{x+2}
+\frac{x^2+3x-5}{x^3-3x+2}= \frac{16/9}{x-1}+\frac{-1/3}{(x-1)^2}+\frac{-7/9}{x+2}.
 \]
 Finalmente, integrando tenemos
 \begin{align*}
@@ -303,7 +303,7 @@ y deshaciendo el cambio anterior se obtiene
 \begin{frame}
 \frametitle{Integración de funciones trigonométricas}
 \framesubtitle{Función $\sin^n x\cos^m x$ con $n$ y $m$ pares}
-Si $f(x)=\sin^n x\cos^m x$ con $n$ y $m$ pares, entonces se suelen utilizar las siguientes igualdades para facilitar el
+Si $f(x)=\sen^n x\cos^m x$ con $n$ y $m$ pares, entonces se suelen utilizar las siguientes igualdades para facilitar el
 cálculo de la integral:
 \begin{align*}
 \sen^2 x &= \frac{1}{2}(1-\cos 2x)\\
@@ -334,7 +334,7 @@ Las igualdades
 \sen x\sen y &= \frac{1}{2}(\cos(x-y)-\cos(x+y))\\
 \cos x\cos y &= \frac{1}{2}(\cos(x-y)+\cos(x+y))
 \end{align*}
-transformas los productos en sumas, simplificando su integración.
+transforman los productos en sumas, simplificando su integración.
 
 \structure{\textbf{Ejemplo}}
 \begin{align*}
@@ -360,4 +360,95 @@ $t$ mediante los cambios
 \int \frac{1}{\sen x}\,dx = \int \frac{1}{\frac{2t}{1+t^2}}\frac{2}{1+t^2}\,dt = \int \frac{1}{t}\,dt = \log|t|+C =
 \log|\tg\frac{x}{2}|+C.
 \]
+\end{frame}
+
+
+
+\subsection{Integral definida}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Integral definida}
+\begin{definicion}[Integral definida]
+Sea $f(x)$ una función cuya primitiva es $F(x)$ en un intervalo $[a,b]$. Se define la integral definida de $f(x)$ en el intervalo $[a,b]$ como
+\[
+\int_a^b f(x)\,dx = \left[F(x)\right]_a^b=F(b)-F(a)
+\]
+\end{definicion}
+\structure{\textbf{Ejemplo}}. Dada la función $f(x)=x^2$, se tiene
+\[
+\int_1^2 x^2\,dx = \left[\frac{x^3}{3}\right]_1^2 = \frac{2^3}{3}-\frac{1^3}{3} = \frac{7}{3}.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Propiedades de la integral definida}
+Dadas dos funciones $f$ y $g$ integrables en $[a,b]$ y $k \in \mathbb{R}$ se cumplen las siguientes propiedades
+\begin{itemize}
+\item $\int_{a}^{b}(f(x)+g(x))\,dx=\int_{a}^{b}f(x)\,dx+\int_{a}^{b}g(x)\,dx$ (linealidad)
+\item $\int_{a}^{b}{kf(x)}\,dx=k\int_{a}^{b}{f(x)}\,dx$ (linealidad)
+\item $\int_{a}^{b}{f(x)\,dx} \leq \int_{a}^{b}{g(x)\,dx}$ si $f(x)\leq g(x)\ \forall x \in [a,b]$ (monotonía)
+\item $\int_{a}^{b}{f(x)\,dx} = \int_{a}^{c}{f(x)\,dx}+\int_{c}^{b}{f(x)\,dx}$ para cualquier $c\in(a,b)$ (aditividad)
+\item $\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx$
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Cálculo de áreas}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Cálculo de áreas}
+\framesubtitle{Área delimitada por una función positiva y el eje de abscisas}
+Si $f$ es una función integrable en un intervalo $[a,b]$ y $f(x)\geq 0\ \forall x\in[a,b]$, entonces la integral definida
+\[\int_a^b f(x)\,dx\]
+mide le área que queda entre la función $f$ y el eje de abscisas en el intervalo $[a,b]$.
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_integral/area_funcion_positiva}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Cálculo de áreas}
+\framesubtitle{Área delimitada por una función negativa y el eje de abscisas}
+Si $f$ es una función integrable en un intervalo $[a,b]$ y $f(x)\leq 0\ \forall x\in[a,b]$, entonces el área que queda entre la función $f$ y el eje de abscisas en el intervalo $[a,b]$ es
+\[
+-\int_a^b f(x)\,dx.
+\]
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_integral/area_funcion_negativa}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Cálculo de áreas}
+\framesubtitle{Área delimitada por una función y el eje de abscisas}
+Si $f$ cambia de signo a lo largo del intervalo $[a,b]$ entonces se divide el intervalo de integración en intervalos donde $f$ tenga el mismo signo, se calcula cada área por separado y se suman.
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_integral/area_funcion_positiva_negativa}}
+\end{center}
+\[\int_a^c f(x)\,dx -\int_c^b f(x)\,dx\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Cálculo de áreas}
+\framesubtitle{Área delimitada por dos funciones}
+Si $f$ y $g$ son dos funciones integrables en el intervalo $[a,b]$ y se
+verifica que $g(x)\leq f(x)$ $\forall x\in[a,b]$, entonces el área de la región
+plana limitada por las curvas $y=f(x)$, $y=g(x)$, y las rectas $x=a$ y $x=b$
+viene dada por
+\[
+\int_{a}^{b}{(f(x)- g(x))\,dx}.
+\]
+
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_integral/area_entre_funciones}}
+\end{center}
 \end{frame}

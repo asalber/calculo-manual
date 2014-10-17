@@ -1,13 +1,8 @@
-%Version control information
-%$HeadURL: https://ejercicioscalculo.googlecode.com/svn/trunk/compendio_ejercicios_calculo.tex $} {$LastChangedDate: 2008-07-09 16:26:20 +0200 (mi�, 09 jul 2008) $
-%$LastChangedRevision: 6 $
-%$LastChangedBy: asalber $
-
-\section{Límites y Continuidad}
+\section{Límites y continuidad en funciones reales de variable real}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Límites y continuidad}
+\frametitle{Límites y continuidad en funciones reales de variable real}
 \tableofcontents[sectionstyle=show/hide,hideothersubsections]
 \end{frame}
 
@@ -452,6 +447,7 @@ Si $\lim_{x\rightarrow a} f(x)=\pm\infty$ y $\lim_{x\rightarrow a} g(x)=\pm\inft
 
 \item \structure{\textbf{Tipo producto}}. Si $\lim_{x\rightarrow a} f(x)=0$ y $\lim_{x\rightarrow a} g(x)=\pm\infty$,
  entonces $f(x)\cdot g(x)$ presenta una indeterminación del tipo \alert{$0\cdot \pm\infty$} cuando $x\rightarrow a$.
+
 \item \structure{\textbf{Tipo potencia}}. Si $\lim_{x\rightarrow a} f(x)=1$ y $\lim_{x\rightarrow a} g(x)=\infty$,
 entonces $f(x)^{g(x)}$ presenta una indeterminación del tipo \alert{$1^\infty$} cuando $x\rightarrow a$.
 
@@ -512,7 +508,7 @@ Para resolver la indeterminación dividimos numerador y denominador por $x^4$ qu
 \begin{align*}
 \lim_{x\rightarrow \infty}\frac{x^3-3x+2}{x^4-4x+3} &=
 \lim_{x\rightarrow \infty}\frac{\frac{x^3-3x+2}{x^4}}{\frac{x^4-4x+3}{x^4}} =
-\lim_{x\rightarrow \infty}\frac{\frac{1}{x}-\frac{3}{x^3}+\frac{2}{x^4}}{1-\frac{4}{x^3}+\frac{3}{x^4}} =\frac{0}{1}=0
+\lim_{x\rightarrow \infty}\frac{\frac{1}{x}-\frac{3}{x^3}+\frac{2}{x^4}}{1-\frac{4}{x^3}+\frac{3}{x^4}} =\frac{0}{1}=0.
 \end{align*}
 En general, si $f(x)=\dfrac{a_0+a_1x+\cdots a_nx^n}{b_0+b_1x+\cdots b_mx^m}$, entonces:
 \begin{itemize}
@@ -529,7 +525,7 @@ En general, si $f(x)=\dfrac{a_0+a_1x+\cdots a_nx^n}{b_0+b_1x+\cdots b_mx^m}$, en
 \begin{definicion}[Infinitésimos equivalentes]
 Si $f(x)\rightarrow 0$ y $g(x)\rightarrow 0$ cuando $x\rightarrow a$, entonces se dice que $f$ y $g$ son \emph{infinitésimos equivalentes} cuando $x\rightarrow a$ si se cumple
 \[
-\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=1
+\lim_{x\rightarrow a}\frac{f(x)}{g(x)}=1.
 \]
 En tal caso se escribe $f(x)\approx g(x)$ cuando $x\rightarrow a$.
 \end{definicion}
@@ -688,7 +684,7 @@ Las asíntotas verticales deben buscarse en los puntos donde no está definida l
 \begin{column}{0.3\textwidth}
 \begin{align*}
 \lim_{x\rightarrow 2^-}\frac{x+1}{x-2}&=-\infty, \textrm{ y}\\
-\lim_{x\rightarrow 2^+}\frac{x+1}{x-2}&=\infty
+\lim_{x\rightarrow 2^+}\frac{x+1}{x-2}&=\infty.
 \end{align*}
 \end{column}
 \begin{column}{0.4\textwidth}
@@ -713,7 +709,7 @@ Se dice que una recta $y=a$ es una \emph{asíntota horizontal} de una función $
 \begin{column}{0.5\textwidth}
 \begin{align*}
 \lim_{x\rightarrow -\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow -\infty}1+\frac{3}{x-2} = 1, \textrm{ y}\\
-\lim_{x\rightarrow +\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow +\infty}1+\frac{3}{x-2} = 1
+\lim_{x\rightarrow +\infty}\frac{x+1}{x-2}&= \lim_{x\rightarrow +\infty}1+\frac{3}{x-2} = 1.
 \end{align*}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -746,7 +742,7 @@ Se dice que una recta $y=a+bx$ es una \emph{asíntota oblicua} de una función $
 \lim_{x\rightarrow \pm\infty}\frac{\frac{x^2}{x-1}}{x}&=
 \lim_{x\rightarrow \pm\infty}\frac{x^2}{x^2-x} = 1, \textrm{ y}\\
 \lim_{x\rightarrow \pm\infty}\frac{x^2}{x-1}-x &=
-\lim_{x\rightarrow \pm\infty}1+\frac{x}{x-1} = 1
+\lim_{x\rightarrow \pm\infty}1+\frac{x}{x-1} = 1.
 \end{align*}
 \end{column}
 \begin{column}{0.5\textwidth}
@@ -768,11 +764,11 @@ Se dice que una función $f$ es \emph{continua} en el punto $a$ si
 \[ \lim_{x\rightarrow a}f(x)=f(a).\]
 \end{definicion}
 
- De esta definición se deducen tres condiciones necesarias para la continuidad:
+De esta definición se deducen tres condiciones necesarias para la continuidad:
 \begin{enumerate}
- $f(a)\in \textrm{Dom}(f)$.
- Existe $\displaystyle \lim_{x\rightarrow a}f(x)$.
- $\displaystyle \lim_{x\rightarrow a}f(x)=f(a)$.
+\item  $f(a)\in \textrm{Dom}(f)$.
+\item  Existe $\displaystyle \lim_{x\rightarrow a}f(x)$.
+\item  $\displaystyle \lim_{x\rightarrow a}f(x)=f(a)$.
 \end{enumerate}
 
 Si se rompe alguna de estas condiciones, se dice que la función presenta una discontinuidad en $a$.
@@ -891,7 +887,7 @@ no existe alguno de los límites laterales y tampoco se trata de una discontinui
 
 Normalmente la discontinuidades de 2ª especie se dan en puntos donde la función no definida en sus proximidades.
 
-\structure{\textbf{Ejemplo}} La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª especie en $x=0$ ya que
+\structure{\textbf{Ejemplo}} La función $f(x)=\dfrac{1}{\sqrt{x^2-1}}$ tiene una discontinuidad de 2ª especie en $x=1$ ya que
 \begin{columns}
 \begin{column}{0.3\textwidth}
 \begin{align*}

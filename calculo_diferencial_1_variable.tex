@@ -1,9 +1,3 @@
-%Version control information
-%$HeadURL: https://ejercicioscalculo.googlecode.com/svn/trunk/compendio_ejercicios_calculo.tex $} {$LastChangedDate: 2008-07-09 16:26:20 +0200 (mi�, 09 jul 2008) $
-%$LastChangedRevision: 6 $
-%$LastChangedBy: asalber $
-
-
 \section{Cálculo diferencial en una variable} 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -135,6 +129,7 @@ La tasa de variación instantánea de $f$ en el punto $a$ es la pendiente de la 
 \begin{frame}
 \frametitle{Propiedades de la derivada}
 Si $y=c$, es una función constante, entonces $y'=0$.
+
 Si $y=x$, es la función identidad, entonces  $y'=1$.
 
 Si $u=f(x)$ y $v=g(x)$ son dos funciones diferenciables, entonces
@@ -153,13 +148,27 @@ Si $u=f(x)$ y $v=g(x)$ son dos funciones diferenciables, entonces
 \begin{frame}
 \frametitle{Diferencial de una función compuesta}
 \framesubtitle{La regla de la cadena}
-Si $y=f\circ g$ es la composición de dos funciones $y=f(z)$ y $z=g(x)$, entonces
+\begin{teorema}[Regla de la cadena]
+$y=f\circ g$ es la composición de dos funciones $y=f(z)$ y $z=g(x)$, entonces
 \[
-(f\circ g)'(x)=f'(g(x))g'(x),
+(f\circ g)'(x)=f'(g(x))g'(x), 
 \]
-o bien
+\end{teorema}
+
+Resulta sencillo demostrarlo con la notación diferencial
 \[
 \frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=f'(z)g'(x)=f'(g(x))g'(x).
+\]
+
+\structure{\textbf{Ejemplo}} Si $f(z)=\sen z$ y $g(x)=x^2$, entonces $f\circ g(x)=\sen(x^2)$ y, aplicando la regla de la cadena, su derivada
+vale
+\[
+(f\circ g)'(x)=f'(g(x))g'(x) = \cos g(x) 2x = \cos(x^2)2x. 
+\]
+Por otro lado, $g\circ f(z)= (\sin z)^2$ y, de nuevo aplicando la regla de la cadena, su derivada vale
+
+\[
+(g\circ f)'(z)=g'(f(z))f'(z) = 2f(z)\cos z = 2\sen z\cos z. 
 \]
 \end{frame}
 
@@ -169,16 +178,24 @@ o bien
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Derivada de la función inversa}
+\begin{teorema}[Derivada de la inversa]
 Si $y=f(x)$ es una función y $x=f^{-1}(y)$ es su inversa, entonces
 \[
 \left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}
 \]
-o bien
+\end{teorema}
+
+También resulta sencillo de demostrar con la notación diferencial
 \[
 \frac{dx}{dy}=\frac{1}{dy/dx}=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}
 \]
-\end{frame}
 
+\structure{\textbf{Ejemplo}} La inversa de la función exponencial $y=f(x)=e^x$ es el logaritmo neperiano $x=f^{-1}(y)=\ln y$, de modo que
+para calcular la derivada del logaritmo podemos utilizar el teorema de la derivada de la inversa y se tiene
+\[
+\left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{e^x}=\frac{1}{e^{\ln y}}=\frac{1}{y}.
+\]
+\end{frame}
 
 
 \subsection{Interpretación cinemática de la derivada}
@@ -224,7 +241,7 @@ del vehículo en el trayecto es
 \frametitle{Interpretación cinemática de la derivada}
 Siguiendo en este mismo contexto del movimiento rectilineo, la derivada de $f$ en el instante $t=t_0$ es el vector
 \[
-\mathbf{v}=f'(t_0)=\lim_{\Delta x\rightarrow 0}\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
+\mathbf{v}=f'(t_0)=\lim_{\Delta t\rightarrow 0}\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
 \]
 que se conoce, siempre que exista el límite, como \emph{velocidad instantánea} o simplemente la \emph{velocidad} de la
 trayectoria $f$ en el instante $t_0$.
@@ -233,8 +250,8 @@ Es decir, la derivada de la posición respecto del tiempo, es un campo de vector
 \emph{velocidad a lo largo de la trayectoria $f$}.
 
 \structure{\textbf{Ejemplo}}
-Siguiendo con el ejemplo anterior, la velocidad instantánea del vehículo en un determinado instante sería lo que marca
-el velocímetro en dicho instante.
+Siguiendo con el ejemplo anterior, lo que marca el velocímetro en un determinado instante sería el módulo del vector
+velocidad  en ese instante.
 \end{frame}
 
 
@@ -271,18 +288,18 @@ En este contexto de una trayectoria $f(t)=(x(t),y(t))$ en el plano real $\mathbb
 \[
 \mathbf{v} = \lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
 \] 
-entonces $f$ es derivable en el instante $t=t_0$ y el vector $\mathbf{v}=f'(t)$ se conoce como \emph{velocidad} de $f$ en ese instante.
+entonces $f$ es derivable en el instante $t=t_0$ y el vector $\mathbf{v}=f'(t_0)$ se conoce como \emph{velocidad} de $f$ en ese instante.
 
-Como $f(t)=(x(t),y(t))$, 
+Como $f(t_0)=(x(t),y(t))$, 
 \begin{align*}
 f'(t)&=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t} = \lim_{\Delta t\rightarrow 0} \frac{(x(t_0+\Delta t),y(t_0+\Delta t))-(x(t_0),y(t_0))}{\Delta t} =\\
 &=  \lim_{\Delta t\rightarrow 0} \left(\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) =\\
 &= \left(\lim_{\Delta t\rightarrow 0}\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\lim_{\Delta t\rightarrow 0}\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) = 
-(x'(t),y'(t)). 
+(x'(t_0),y'(t_0)). 
 \end{align*} 
 luego
 \[
-\mathbf{v} = x'(t)\mathbf{i}+y'(t)\mathbf{j}.
+\mathbf{v} = x'(t_0)\mathbf{i}+y'(t_0)\mathbf{j}.
 \]
 \end{frame}
 
@@ -291,10 +308,10 @@ luego
 \begin{frame}
 \frametitle{Velocidad en una trayectoria curvilinea en el plano}
 \framesubtitle{Ejemplo}
-Dada la trayectoria $f(t) = (\cos t,\sen t)$, $t\in \mathbb{R}$, cuya gráfica es la circunferencia de centro el origen
+Dada la trayectoria $f(t) = (\cos t,\sen t)$, $t\in \mathbb{R}$, cuya imagen es la circunferencia de centro el origen
 de coordenas y radio 1, sus funciones coordenadas son $x(t) = \cos t$, $y(t) = \sen t$, $t\in \mathbb{R}$, y su velocidad es 
 \[
-\mathbf{v}=f'(t)=(x'(t),y'(t))=(-\sen t, \cos t)
+\mathbf{v}=f'(t)=(x'(t),y'(t))=(-\sen t, \cos t).
 \]
 En el instante $t=\pi/4$, el móvil estará en la posición $f(\pi/4) = (\cos(\pi/4),\sen(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)$
 y se moverá con una velocidad $\mathbf{v}=f'(\pi/4)=(-\sen(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)$.
@@ -311,23 +328,23 @@ $|\mathbf{v}|=\sqrt{(-\sen t)^2+(\cos t)^2}=1$.
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Recta tangente a una trayectoria en el plano}
-Los vectores paralelos a la velocidad $\mathbf{v}$ se denominan \emph{vectores tangentes} a la gráfica de la trayectoria
-$f$ en el punto $P=f(t_0)$ y la recta que pasa por $P$ dirigida por $\mathbf{v}$ es la recta tangente a $f$ cuando
+Los vectores paralelos a la velocidad $\mathbf{v}$ se denominan \emph{vectores tangentes} a la trayectoria
+$f$ en el instante $t=t_0$, y la recta que pasa por $P=f(t_0)$ dirigida por $\mathbf{v}$ es la recta tangente a $f$ cuando
 $t=t_0$.
 \begin{definicion}[Recta tangente a una trayectoria]
 Dada una trayectoria $f$ sobre el plano real $\mathbb{R}^2$, se llama \emph{recta tangente} a $f$ para $t=t_0$ a la
 recta de ecuación
 \[
-l = f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0)) = (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0)). 
+l: (x,y)= f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0)) = (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0)). 
 \]
 \end{definicion}
 \structure{\texbf{Ejemplo}}
-Se ha visto que para la trayectoria $f(t) = (\cos t,\sen t)$, $t\in \mathbb{R}$, cuya gráfica es la circunferencia de
+Se ha visto que para la trayectoria $f(t) = (\cos t,\sen t)$, $t\in \mathbb{R}$, cuya imagen es la circunferencia de
 centro el origen de coordenas y radio 1, en el instante $t=\pi/4$ la posición del móvil era
 $f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)$ y su velocidad $\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)$, de modo que la recta tangente a
 $f$ en ese instante es
 \[
-l=f(\pi/2)+t\mathbf{v} = 
+l: X=f(\pi/4)+t\mathbf{v} = 
 \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{-\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) = 
 \left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right).
 \]
@@ -343,7 +360,7 @@ De la ecuación vectorial de la recta tangente a $f$ para $t=t_0$, se obtiene qu
 x=x(t_0)+tx'(t_0)\\
 y=y(t_0)+ty'(t_0)
 \end{cases}
-\quad t\in \matbb{R},
+\quad t\in \mathbb{R},
 \]
 y despejando $t$ en ambas ecuaciones e igualando se llega a la ecuación cartesiana de la recta tangente
 \[
@@ -368,13 +385,13 @@ es
 \begin{frame}
 \frametitle{Recta normal a una trayectoria en el plano}
 Se ha visto que la recta tangente a una trayectoria $f$ cuando $t=t_0$ es la recta que pasa por el punto el punto
-$P=f(t_0)$ dirigida por el vector velocidad $\mathbf{v}=f'(0)=(x'(t_0),y'(t_0))$. Si en lugar de tomar ese vector se
+$P=f(t_0)$ dirigida por el vector velocidad $\mathbf{v}=f'(t_0)=(x'(t_0),y'(t_0))$. Si en lugar de tomar ese vector se
 toma como vector director el vector $\mathbf{w}=(y'(t_0),-x'(t_0))$, que es ortogonal a $\mathbf{v}$, se obtiene otra
 recta que se conoce como \emph{recta normal} a la trayectoria $f$ cuanto $t=t_0$.
 \begin{definicion}[Recta normal a una trayectoria]
 Dada una trayectoria $f$ sobre el plano real $\mathbb{R}^2$, se llama \emph{recta normal} a $f$ para $t=t_0$ a la recta de ecuación 
 \[
-l = (x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) = (x(t_0)+ty'(t_0),y(t_0)-tx'(t_0)). 
+l: (x,y)=(x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) = (x(t_0)+ty'(t_0),y(t_0)-tx'(t_0)). 
 \]
 \end{definicion}
 Su ecuación cartesiana es
@@ -395,7 +412,7 @@ La recta normal es perpendicular a la recta tangente ya que sus vectores directo
 \framesubtitle{Ejemplo}
 Siguiendo con el ejemplo de la trayectoria $f(t) = (\cos t,\sen t)$, $t\in \mathbb{R}$, la recta normal en el instante $t=\pi/4$ es
 \begin{align*}
-l&= (\cos(\pi/2),\sen(\pi/2))+t(\cos(\pi/2),\sen(\pi/2)) =\\
+l&: (x,y)=(\cos(\pi/2),\sen(\pi/2))+t(\cos(\pi/2),\sen(\pi/2)) =\\
 & \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)
 =\left(\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right),
 \end{align*}
@@ -446,7 +463,7 @@ $g'(t)=(1,2t)$, de modo que en el punto $(1,1)$, que se alcanza en el instante $
 \]  
 y la recta normal es 
 \[
-\frac{x-1}{2} = \frac{y-1}{-1} \Rightarrow y-1 = \frac{-1}{2}(x-1) \Rightarrow y = \frac{-x}{2}+\frac{3}{2}).
+\frac{x-1}{2} = \frac{y-1}{-1} \Rightarrow y-1 = \frac{-1}{2}(x-1) \Rightarrow y = \frac{-x}{2}+\frac{3}{2}.
 \]
 \begin{center}
 \scalebox{0.8}{\input{img/calculo_diferencial_1_variable/parabola_tangente_normal}}
@@ -462,7 +479,7 @@ El concepto de recta tangente a una trayectoria en el plano real puede extenders
 Si $f(t)=(x(t),y(t),z(t))$, $t\in I\subseteq \mathbb{R}$, es una trayectoria en el espacio real $\mathbb{R}^3$, entonces
 el móvil que recorre esta trayectoria en el instante $t=t_0$, ocupará la posición $P=(x(t_0),y(t_0),z(t_0))$ y tendrá una velocidad $\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))$, de manera que la recta tangente a $f$ en ese instante será
 \begin{align*}
-l&=(x(t_0),y(t_0),z(t_0))+t(x'(t_0),y'(t_0),z'(t_0)) =\\
+l&: (x,y,z)=(x(t_0),y(t_0),z(t_0))+t(x'(t_0),y'(t_0),z'(t_0)) =\\
 &= (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0),z(t_0)+tz'(t_0)),
 \end{align*}
 cuyas ecuaciones cartesianas son 
@@ -487,12 +504,12 @@ f(\pi/2)=(\cos(\pi/2),\sen(\pi/2),\pi/2)=(0,1,\pi/2),
 \] y la
 tangente en ese punto es
 \[
-l=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2)
+l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 \] 
 \begin{center}
 \scalebox{0.8}{\input{img/calculo_diferencial_1_variable/tangente_trayectoria_espacio}}
 \end{center} 
-\end{frame}
+\end{frame} 
 
 
 \subsection{Estudio del crecimiento de una función}
@@ -559,7 +576,6 @@ Su derivada $f'(x)=4x^3-4x$ está definida en todo $\mathbb{R}$ y es continua.
 \end{frame}
 
 
-
 \subsection{Estudio de la concavidad de una función}
 %---------------------------------------------------------------------slide---
 \begin{frame}
@@ -588,6 +604,343 @@ Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su segunda derivada $f''(x)
 \scalebox{1}{\input{img/calculo_diferencial_1_variable/estudio_concavidad}}
 \end{center}
 \end{frame}
+
+
+
+\subsection{Polinomios de Taylor}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación de una función mediante un polinomio}
+Una apliación muy útil de la derivada es la aproximación de funciones mediante polinomios. 
+
+Los polinomios son funciones sencillas de calcular (mediante sumas y productos), que tienen muy buenas propiedades:
+\begin{itemize}
+\item Están definidos en todos los números reales.
+\item Son funciones continuas.
+\item Son derivables hasta cualquier orden y sus derivadas son continuas.  
+\end{itemize}
+
+\begin{block}{Objetivo}
+Aproximar una función $f(x)$ mediante un polinomio $p(x)$ cerca de un valor $x=x_0$.
+\end{block}
+
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación mediante un polinomio de grado 0}
+Un polinomio de grado 0 tiene ecuación
+\[
+p(x) = c_0,
+\]
+donde $c_0$ es una constante.
+
+Como el polinomio debe valer lo que la función en el punto $x_0$, debe cumplir
+\[p(x_0) = c_0 = f(x_0).\]
+
+En consecuencia, el polinomio de grado 0 que mejor aproxima a $f$ en un entorno de $x_0$ es
+\[p(x) = f(x_0).\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación mediante un polinomio de grado 0}
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_derivada/polinomio_grado_0}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación mediante un polinomio de grado 1}
+Un polinomio de grado 1 es una recta y tiene ecuación
+\[
+p(x) = c_0+c_1x,
+\]
+aunque también puede escribirse
+\[
+p(x) = c_0+c_1(x-x_0).
+\]
+
+De entre todos los polinomios de grado 1, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las dos condiciones siguientes:
+\begin{itemize}
+\item[\structure{1-}] $p$ y $f$ valen lo mismo en $x_0$: $p(x_0) = f(x_0)$,
+\item[\structure{2-}] $p$ y $f$ tienen la misma tasa de crecimiento en $a$: $p'(x_0) = f'(x_0)$.
+\end{itemize}
+Esta última condición nos asegura que en un entorno de $x_0$, $p$ y $f$ tienen aproximadamente la misma tendencia de crecimiento, pero requiere que la función $f$ sea derivable en $x_0$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{La recta tangente: Mejor aproximación de grado 1}
+Imponiendo las condiciones anteriores tenemos
+\begin{itemize}
+\item[\structure{1-}] $p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)$,
+\item[\structure{2-}] $p'(x)=c_1 \Rightarrow p'(x_0)=c_1=f'(x_0)$.
+\end{itemize}
+
+Así pues, el polinomio de grado 1 que mejor aproxima a $f$ en un entorno de $x_0$ es
+\[
+p(x) = f(x_0)+f '(x_0)(x-x_0),
+\]
+que resulta ser la recta tangente a $f$ en el punto $(x_0,f(x_0))$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación mediante un polinomio de grado 1}
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_derivada/polinomio_grado_1}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación mediante un polinomio de grado 2}
+Un polinomio de grado 2 es una parábola y tiene ecuación
+\[
+p(x) = c_0+c_1x+c_2x^2,
+\]
+aunque también puede escribirse
+\[
+p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2.
+\]
+
+De entre todos los polinomio de grado 2, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las tres condiciones siguientes:
+\begin{itemize}
+\item[\structure{1-}] $p$ y $f$ valen lo mismo en $x_0$: $p(x_0) = f(x_0)$,
+\item[\structure{2-}] $p$ y $f$ tienen la misma tasa de crecimiento en $x_0$: $p'(x_0) = f'(x_0)$.
+\item[\structure{3-}] $p$ y $f$ tienen la misma curvatura en $x_0$: $p''(x_0)=f''(x_0)$.
+\end{itemize}
+Esta última condición requiere que la función $f$ sea dos veces derivable en $x_0$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Mejor polinomio de grado 2}
+Imponiendo las condiciones anteriores tenemos
+\begin{itemize}
+\item[\structure{1-}] $p(x)=c_0+c_1(x-x_0)+c_2(x-x_0)^2 \Rightarrow p(x_0)=c_0=f(x_0)$,
+\item[\structure{2-}] $p'(x)=c_1+2c_2(x-x_0) \Rightarrow p'(x_0)=c_1+2c_2(x_0-x_0)=c_1=f'(x_0)$,
+\item[\structure{3-}] $p''(x)=2c_2 \Rightarrow p''(x_0)=2c_2=f''(x_0) \Rightarrow c_2=\frac{f''(x_0)}{2}$.
+\end{itemize}
+
+Así pues, el polinomio de grado 2 que mejor aproxima a $f$ en un entorno de $x_0$ es
+\[
+p(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación mediante un polinomio de grado 2}
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_derivada/polinomio_grado_2}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Aproximación mediante un polinomio de grado $n$}
+Un polinomio de grado $n$ tiene ecuación
+\[p(x) = c_0+c_1x+c_2x^2+\cdots +c_nx^n,\]
+aunque también puede escribirse
+\[p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n.\]
+
+De entre todos los polinomio de grado $n$, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las $n+1$ condiciones siguientes:
+\begin{itemize}
+\item[\structure{1-}] $p(x_0) = f(x_0)$,
+\item[\structure{2-}] $p'(x_0) = f'(x_0)$,
+\item[\structure{3-}] $p''(x_0)=f''(x_0)$,
+\item[] $\cdots$
+\item[\structure{n+1-}] $p^{(n}(x_0)=f^{(n}(x_0)$.
+\end{itemize}
+\alert{Obsérvese que para que se cumplan estas condiciones es necesario que $f$ sea $n$ veces derivable en $x_0$.}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Cálculo de los coeficientes del polinomio de grado $n$}
+Las sucesivas derivadas de $p$ valen
+\begin{align*}
+p(x) &= c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n,\\
+p'(x)& = c_1+2c_2(x-x_0)+\cdots +nc_n(x-x_0)^{n-1},\\
+p''(x)& = 2c_2+\cdots +n(n-1)c_n(x-x_0)^{n-2},\\
+\vdots\ \
+\\
+p^{(n}(x)&= n(n-1)(n-2)\cdots 1 c_n=n!c_n.
+\end{align*}
+
+Imponiendo las condiciones anteriores se tiene
+\begin{itemize}
+\item[\structure{1-}] $p(x_0) = c_0+c_1(x_0-x_0)+c_2(x_0-x_0)^2+\cdots +c_n(x_0-x_0)^n=c_0=f(x_0)$,
+\item[\structure{2-}] $p'(x_0) = c_1+2c_2(x_0-x_0)+\cdots +nc_n(x_0-x_0)^{n-1}=c_1=f'(x_0)$,
+\item[\structure{3-}] $p''(x_0) = 2c_2+\cdots +n(n-1)c_n(x_0-x_0)^{n-2}=2c_2=f''(x_0)\Rightarrow c_2=f''(x_0)/2$,
+\item[] $\cdots$
+\item[\structure{n+1-}] $p^{(n}(x_0)=n!c_n=f^{(n}(x_0)=c_n=\frac{f^{(n}(x_0)}{n!}$.
+\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Polinomio de Taylor de orden $n$}
+\begin{definicion}[Polinomio de Taylor de orden $n$ para $f$ en el punto $a$]
+Dada una función $f$, $n$ veces derivable en $x=x_0$, se define el \emph{polinomio de Taylor} de orden $n$ para $f$ en $x_0$ como
+\begin{align*}
+p_{f,x_0}^n(x)&=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2+\cdots +\frac{f^{(n}(x_0)}{n!}(x-x_0)^n = \\ &=\sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}(x-x_0)^i,
+\end{align*}
+o bien, escribiendo $x=x_0+h$
+\[
+p_f^n(x_0+h)&=f(x_0)+f'(x_0)h+\frac{f''(x_0)}{2}h^2+\cdots +\frac{f^{(n}(x_0)}{n!}h^n =\sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}h^i,
+\]
+\end{definicion}
+
+El polinomio de Taylor de orden $n$ para $f$ en $x_0$ es el polinomio de orden $n$ que mejor aproxima a $f$ alrededor de $x_0$, ya que es el único que cumple las $n+1$ condiciones anteriores.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Cálculo del polinomio de Taylor}
+\framesubtitle{Ejemplo}
+Vamos a aproximar la función $f(x)=\log x$ en un entorno del punto $1$ mediante un polinomio de grado $3$.
+
+La ecuación del polinomio de Taylor de orden $3$ para $f$ en el punto $1$ es
+\[
+p_{f,1}^3(x)=f(1)+f'(1)(x-1)+\frac{f''(1)}{2}(x-1)^2+\frac{f'''(1)}{3!}(x-1)^3.
+\]
+Calculamos las tres primeras derivadas de $f$ en $1$:
+\[
+\begin{array}{lll}
+f(x)=\log x & \quad & f(1)=\log 1 =0,\\
+f'(x)=1/x & & f'(1)=1/1=1,\\
+f''(x)=-1/x^2 & & f''(1)=-1/1^2=-1,\\
+f'''(x)=2/x^3 & & f'''(1)=2/1^3=2.
+\end{array}
+\]
+Sustituyendo en la ecuación del polinomio se tiene
+\[
+p_{f,1}^3(x)=0+1(x-1)+\frac{-1}{2}(x-1)^2+\frac{2}{3!}(x-1)^3= \frac{2}{3}x^3-\frac{3}{2}x^2+3x-\frac{11}{6}.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Polinomios de Taylor para la función logaritmo}
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_derivada/polinomio_taylor_logaritmo}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Polinomio de Mc Laurin de orden $n$}
+La ecuación del polinomio de Taylor se simplifica cuando el punto en torno al cual queremos aproximar es el $0$.
+\begin{definicion}[Polinomio de Mc Laurin de orden $n$ para $f$]
+Dada una función $f$, $n$ veces derivable en $0$, se define el \emph{polinomio de Mc Laurin} de orden $n$ para $f$ como
+\begin{align*}
+p_{f,0}^n(x)&=f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\cdots +\frac{f^{(n}(0)}{n!}x^n = \\ &=\sum_{i=0}^{n}\frac{f^{(i}(0)}{i!}x^i.
+\end{align*}
+\end{definicion}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Cálculo del polinomio de Mc Laurin}
+\framesubtitle{Ejemplo}
+Vamos a aproximar la función $f(x)=\sen x$ en un entorno del punto $0$ mediante un polinomio de grado $3$.
+
+La ecuación del polinomio de Mc Laurin de orden $3$ para $f$ es
+\[
+p_{f,0}^3(x)=f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\frac{f'''(0)}{3!}x^3.
+\]
+Calculamos las tres primeras derivadas de $f$ en $0$:
+\[
+\begin{array}{lll}
+f(x)=\sen x & \quad & f(0)=\sen 0 =0,\\
+f'(x)=\cos x & & f'(0)=\cos 0=1,\\
+f''(x)=-\sen x & & f''(0)=-\sen 0=0,\\
+f'''(x)=-\cos x & & f'''(0)=-\cos 0=-1.
+\end{array}
+\]
+Sustituyendo en la ecuación del polinomio obtenemos
+\[
+p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Polinomios de Mc Laurin para la función seno}
+\begin{center}
+\scalebox{1}{\input{img/aplicaciones_derivada/polinomio_mclaurin_seno}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Polinomios de Mc Laurin de funciones elementales}
+\[
+\renewcommand{\arraystretch}{2.5}
+\begin{array}{|c|c|}
+\hline
+f(x) & p_{f,0}^n(x) \\
+\hline\hline
+\sen x & \displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} \mbox{ si $n=2k$ o $n=2k-1$}\\
+\hline
+\cos x &  \displaystyle 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots +(-1)^k\frac{x^{2k}}{(2k)!} \mbox{ si $n=2k$ o $n=2k+1$}\\
+\hline
+\arctg x &  \displaystyle x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)} \mbox{ si $n=2k$ o $n=2k-1$}\\
+\hline
+e^x & \displaystyle 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots + \frac{x^n}{n!}\\
+\hline
+\log(1+x) & \displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots +(-1)^{n-1}\frac{x^n}{n}\\
+\hline
+\end{array}
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Resto de Taylor}
+Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor $x_0$, pero siempre se comete un error en dicha aproximación.
+\begin{definicion}[Resto de Taylor]
+Si $f$ es una función para la que existe el su polinomio de Taylor de orden $n$ en $x_0$, $p_{f,x_0}^n$, entonces se define el \emph{resto de Taylor} de orden $n$ para $f$ en $x_0$ como
+\[
+r_{f,x_0}^n(x)=f(x)-p_{f,x_0}^n(x).
+\]
+\end{definicion}
+
+El resto mide el error cometido al aproximar $f(x)$ mediante $p_{f,x_0}^n(x)$ y permite expresar la función $f$ como la suma de un polinomio de Taylor más su resto correspondiente:
+\[
+f(x)=p_{f,x_0}^n(x) + r_{f,x_0}^n(x).
+\]
+Esta expresión se conoce como \emph{fórmula de Taylor} de orden $n$ para $f$ en $x_0$. Se pude demostrar, además, que
+\[
+\lim_{h\rightarrow 0}\frac{r_{f,x_0}^n(x_0+h)}{h^n}=0,
+\]
+lo cual indica que el resto $r_{f,x_0}^n(x_0+h)$ es mucho menor que $h^n$.
+\end{frame}
+
+
+
 
 
 % 

@@ -1,0 +1,8 @@
+\psset{Alpha=60,Beta=30}
+\begin{pspicture*}(-4,-1)(4,3)
+\pstThreeDCoor[IIIDticks,xMin=-2,yMin=-2,zMin=0,xMax=2,yMax=2,zMax=3,linecolor=black]
+\parametricplotThreeD[xPlotpoints=50, linecolor=red, plotstyle=curve, algebraic](-3.14,3.14){1.41*sin(t) | 1.41*cos(t) | 0}
+\psplotThreeD[drawStyle=xLines,xPlotpoints=50,yPlotpoints=50, linewidth=0.5pt,hiddenLine=true, linecolor=blue, plotstyle=line, algebraic](-1.2,1.2)(-1.2,1.2){x^2+y^2}
+\pstThreeDDot[drawCoor=true](1,1,2)
+\pstThreeDPut[pOrigin=l](1.1,1.1,0){$P=(1,1)$}
+\end{pspicture*}
