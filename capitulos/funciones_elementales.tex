@@ -1,0 +1,831 @@
+\section{Funciones reales de variable real}
+
+%---------------------------------------------------------------------slide----
+\mode<presentation>{
+	\begin{frame}
+		\frametitle{Funciones reales de variable real}
+		\setlength{\parskip}{0.3em}
+		\tableofcontents[sectionstyle=show/hide,hideothersubsections]
+	\end{frame}
+}
+
+\subsection{El concepto de función}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{¿Qué es una función?}
+	\begin{definicion}[Función de una variable]
+		Una \emph{función} $f$ de un conjunto $A$ en otro $B$ es una \emph{relación} que asocia cada elemento $a\in A$, con un \emph{único} elemento de $B$ que se denota $f(a)$, y se llama \emph{imagen} de $a$ mediante $f$.
+		\begin{align*}
+			f:\, & A\longrightarrow B    \\
+			     & a\longrightarrow f(a) 
+		\end{align*}
+	\end{definicion}
+	
+	\begin{center}
+		\scalebox{1}{\input{img/funciones_elementales/definicion_funcion}}
+	\end{center}
+	Cuando el conjunto inicial y final es el de los números reales $\mathbb{R}$, entonces se dice que 
+	$f:\mathbb{R}\rightarrow \mathbb{R}$ es una \emph{función real de variable real}.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Formas de representar una función}
+	\begin{columns}
+		\begin{column}{.48\textwidth}
+			\textbf{Por extensión}
+			\begin{block}{Representación en tabla}
+				\[
+					\begin{array}{|c|c|c|c|c|c|c|}
+						\hline
+						x & -2 & -1 & 0 & 1 & 2 & \cdots \\
+						\hline
+						y & 4  & 1  & 0 & 1 & 4 & \cdots \\
+						\hline
+					\end{array}
+				\]
+			\end{block}
+			\begin{block}{Representación gráfica}
+				\begin{center}
+					\scalebox{0.7}{\input{img/funciones_elementales/funcion_cuadrado}}
+				\end{center}
+			\end{block}
+		\end{column}
+		\begin{column}{.48\textwidth}
+			\textbf{Por Intensión}
+			\begin{block}{Representación algebraica explícita}
+				\[y=x^2\]
+			\end{block}
+			\begin{block}{Representación algebraica implícita}
+				\[y-x^2=0\]
+			\end{block}
+			\begin{block}{Representación algebraica paramétrica}
+				\[  
+					\begin{cases}
+						y=t^2 \\
+						x=t   
+					\end{cases}
+				\]
+			\end{block}
+		\end{column}   
+	\end{columns}
+\end{frame} 
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{La función Identidad}
+	\begin{definicion}[Función Identidad]
+		Se llama \emph{función identidad}, a toda función $Id: A\rightarrow A$ que asocia cada elemento de $A$ con sigo mismo, es decir, 
+		\[Id(x)=x.\]
+	\end{definicion}
+	\begin{center}
+		\scalebox{1}{\input{img/funciones_elementales/funcion_identidad}}
+	\end{center}
+\end{frame} 
+
+
+
+\subsection{Dominio e imagen de una función}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Dominio de una función}
+	\begin{definicion}[Dominio de una función]
+		El \emph{dominio} de una función $f$ es el conjunto de valores para los que la función está definida
+		\[
+			Dom(f)=\{x\in \mathbb{R}: f(x)\in \mathbb{R}\}
+		\]
+	\end{definicion}
+	\structure{\bfseries Ejemplo}
+	\begin{center}
+		\scalebox{1}{\input{img/funciones_elementales/ejemplo_dominio}}\\
+		$\mbox{Dom}(f)=(-\infty,-1)\cup(1,\infty)$
+	\end{center}
+\end{frame} 
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Imagen de una función}
+	\begin{definicion}[Imagen de una función]
+		La \emph{imagen} de una función $f$ es el conjunto de valores que la función puede tomar
+		\[
+			Img(f)=\{y\in \mathbb{R}: y=f(x) \mbox{ para algún } x\in\mathbb{R}\}
+		\]
+	\end{definicion}
+	\structure{\bfseries Ejemplo}
+	\begin{center}
+		\scalebox{1}{\input{img/funciones_elementales/ejemplo_imagen}}\\
+		$\mbox{Img}(f)=[-2,\infty)$
+		\end{center}
+	\end{frame} 
+	
+	
+	
+	\subsection{Composición e inversa de una función}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Composición de funciones}
+		\begin{definicion}[Composición de funciones]
+			Dadas dos funciones $g:A\rightarrow B$ y $f:B\rightarrow C$, se define la \emph{función compuesta} $f\circ g$, (leído $g$ compuesto con $f$) como la función  
+			\begin{align*}
+				f\circ g:\, & A\longrightarrow C       \\
+				            & x\longrightarrow f(g(x)) 
+			\end{align*}
+		\end{definicion}
+		Para calcular la función compuesta $f\circ g(x)$, primero se aplica $g$ sobre $x$ y luego, se aplica $f$ sobre $g(x)$:
+		\[
+			x\stackrel{g}{\longrightarrow}g(x)\stackrel{f}{\longrightarrow}f(g(x))
+		\]
+		\structure{\textbf{Ejemplo}} Si $g(x)=\sqrt x$ y $f(x)=\sen x$, entonces 
+		\[
+			f\circ g(x)=f(g(x))=f(\sqrt x)=\sen \sqrt x.
+		\]
+		\begin{center}
+			\emph{¿Cuál es su dominio?}
+		\end{center}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Inversa de una función}
+		\begin{definicion}[Función inversa]
+			Se llama \emph{función inversa} de $f:A\rightarrow B$ a la función $f^{-1}:B\rightarrow A$ (cuando exista) que cumple
+			\[
+				f\circ f^{-1}=f^{-1}\circ f=Id(x)
+			\]
+		\end{definicion}
+		
+		La función inversa de $f$ deshace o revierte el efecto de $f$. 
+		Es decir, si $f:A\rightarrow B$ asocia un elemento $x\in A$ con otro $y\in B$,
+		entonces $f^{-1}$ asocia el elemento $y$ con el $x$: 
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_inversa}}
+		\end{center}
+		
+		\structure{\textbf{Ejemplo}}
+		\begin{itemize}
+			\item[--] La inversa de $f(x)=x^3$ es la función $f^{-1}(x)=\sqrt[3]{x}.$ 
+			\item[--] La función $x^2$ no tiene inversa. ¿Por qué?
+		\end{itemize}
+	\end{frame} 
+	
+	
+	
+	\subsection{Crecimiento de una función}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Crecimiento de una función}
+		\begin{definicion}[Función creciente y decreciente]
+			Se dice que una función $f$ es \emph{creciente} en un intervalo $I$, si para todo $x_1,x_2\in I$, con $x_1<x_2$, se
+			cumple $f(x_1)\leq f(x_2)$.
+			
+			Se dice que una función $f$ es \emph{decreciente} en un intervalo $I$, si para todo $x_1,x_2\in I$, con $x_1<x_2$, se
+			cumple $f(x_1)\geq f(x_2)$.
+		\end{definicion}
+		
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/funcion_creciente}}\\
+					\color{red}Función creciente
+				\end{center}
+			\end{column}
+			\begin{column}{0.4\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/funcion_decreciente}}\\
+					\color{red}Función decreciente
+				\end{center}
+			\end{column}
+		\end{columns}
+	\end{frame} 
+	
+	
+	
+	\subsection{Extremos de una función}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Extremos de una función}
+		\begin{definicion}[Máximo y mínimo relativo]
+			Se dice que una función $f$ tiene un \emph{máximo relativo} en $x_0$, si existe un $\delta>0$ tal que para todo $x\in
+			(x_0-\delta,x_0+\delta)$ se cumple $f(x_0)\geq f(x)$.
+			
+			Se dice que una función $f$ tiene un \emph{mínimo relativo} en $x_0$, si existe un $\delta>0$ tal que para todo $x\in
+			(x_0-\delta,x_0+\delta)$ se cumple $f(x_0)\leq f(x)$.
+		\end{definicion}
+		
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/maximo}}\\
+					\color{red}Máximo
+				\end{center}
+			\end{column}
+			\begin{column}{0.4\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/minimo}}\\
+					\color{red}Mínimo
+				\end{center}
+			\end{column}
+		\end{columns}
+	\end{frame} 
+	
+	
+	\subsection{Concavidad de una función}
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Concavidad de una función}
+		\begin{definicion}[Función cóncava y convexa]
+			Se dice que una función $f$ es \emph{cóncava} en un intervalo $I$, si para todo $x_1,x_2\in I$, con $x_1<x_2$, se cumple
+			que el segmento que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por encima de la gráfica de $f$.
+			
+			Se dice que una función $f$ es \emph{convexa} en un intervalo $I$, si para todo $x_1,x_2\in I$, con $x_1<x_2$, se cumple
+			que el segmento que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ queda por debajo de la gráfica de $f$.
+			
+			Al punto donde cambia la concavidad de una función se le llama \emph{punto de inflexión}.
+		\end{definicion}
+		
+		\begin{columns}
+			\begin{column}{0.4\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/funcion_concava}}\\
+					\color{red}Función cóncava
+				\end{center}
+			\end{column}
+			\begin{column}{0.4\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/funcion_convexa}}\\
+					\color{red}Función convexa
+				\end{center}
+			\end{column}
+		\end{columns}
+	\end{frame} 
+	
+	
+	
+	\subsection{Funciones periódicas}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Funciones periódicas}
+		\begin{definicion}[Función periódica y periodo]
+			Se dice que una función $f$ es \emph{periódica} si existe un valor $h>0$ tal que
+			\[f(x+h)=f(x)\]
+			para todo $x\in \textrm{Dom}(f)$.
+			
+			Al menor valor de $h$ que verifica la igualdad anterior se le llama \emph{periodo} de $f$, y a la mitad de la diferencia entre el
+			máximo y el mínimo de la función se le llama \emph{amplitud} de $f$.
+		\end{definicion}
+		
+		\begin{center}
+			\scalebox{0.8}{\input{img/funciones_elementales/funcion_periodica}}
+		\end{center}
+	\end{frame} 
+	
+	
+	
+	\subsection{Funciones polinómicas}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Funciones polinómicas}
+		\begin{definicion}[Función polinómica]
+			Una \emph{función polinómica} es una función de la forma
+			\[
+				f(x)=a_0+a_1x+a_2x^2+\cdots+a_nx^n,
+			\]
+			donde $n$ es un entero no negativo que se llama \emph{grado del polinomio}, y $a_0,\ldots,a_n$ son constantes reales
+			($a_n\neq 0$) que se llaman \emph{coeficientes del polinomio}.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_polinomica}}
+		\end{center}
+	\end{frame} 
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de las funciones polinómicas}
+		\begin{itemize}
+			\item Su dominio es $\mathbb{R}$.
+			\item Si el grado es impar, su imagen es $\mathbb{R}$.
+			\item La función identidad $Id(x)=x$ es un polinomio de grado 1.
+			\item Las funciones constantes $f(x)=c$ son polinomios de grado 0.
+			\item Un polinomio de grado $n$ tiene a lo sumo $n$ raíces (puntos donde $f(x)=0$). 
+		\end{itemize}
+	\end{frame} 
+	
+	
+	
+	\subsection{Funciones racionales}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Funciones racionales}
+		\begin{definicion}[Función racional]
+			Una \emph{función racional} es una función de la forma
+			\[
+				f(x)=\frac{p(x)}{q(x)}
+			\]
+			donde $p(x)$ y $q(x)$ son funcione polinómicas con $q(x)\neq 0$.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_racional}}
+		\end{center}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de las funciones racionales}
+		\begin{itemize}
+			\item Su dominio es $\mathbb{R}$ menos las raíces del polinomio del denominador. En estos puntos suele haber asíntotas
+			      verticales.
+			\item La tendencia en $\infty$ y $-\infty$ depende del grado del numerador y del denominador. 
+			      
+			      Si $f(x)=\dfrac{a_0+\cdots +a_nx^n}{b_0+\cdots+b_mx^m}$, entonces
+			      \begin{itemize}
+			      	\item Si $n>m$ $\rightarrow$ $f(\pm\infty)=\pm\infty$.
+			      	\item Si $n<m$ $\rightarrow$ $f(\pm\infty)=0$.
+			      	\item Si $n=m$ $\rightarrow$ $f(\pm\infty)=\dfrac{a_n}{b_m}$.
+			      \end{itemize}
+			\item Los polinomios son casos particulares de funciones racionales. 
+			\item Pueden descomponerse en suma de fracciones simples.
+		\end{itemize}
+	\end{frame} 
+	
+	
+	
+	\subsection{Funciones potenciales}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Funciones potenciales}
+		\begin{definicion}[Función potencial]
+			Una \emph{función potencial} es una función de la forma
+			\[
+				f(x)=x^r,
+			\]
+			donde $r$ es un número real.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_potencial}}
+		\end{center}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de las funciones potenciales}
+		\begin{itemize}
+			\item Si el exponente es un número racional $n/m$, entonces 
+			      \[x^{n/m}=\sqrt[m]{x^n}.\]
+			      Estas funciones se llaman \emph{irracionales}. En este caso, 
+			      \begin{itemize}
+			      	\item si $m$ es impar el dominio es $\mathbb{R}$,
+			      	\item si $m$ es par el dominio es $\mathbb{R}^+$.
+			      \end{itemize}
+			\item Todas pasan por el punto $(1,1)$.
+			\item El crecimiento depende del exponente. Si $x>0$ entonces:
+			      \begin{itemize}
+			      	\item Exponente positivo $\Rightarrow$ función creciente.
+			      	\item Exponente negativo $\Rightarrow$ función decreciente. 
+			      \end{itemize}
+			      Además, si $f(x)=x^r$ y $g(x)=x^s$, entonces:
+			      \begin{itemize}
+			      	\item Si $r<s$ $\Rightarrow$ $f(x)>g(x)$ si $0<x<1$ y $f(x)<g(x)$ si $x>1$.
+			      	\item Si $r>s$ $\Rightarrow$ $f(x)<g(x)$ si $0<x<1$ y $f(x)>g(x)$ si $x>1$.
+			      \end{itemize}
+			      
+			\item Los polinomios de la forma $f(x)=x^n$ son un caso particular de funciones potenciales. 
+		\end{itemize}
+	\end{frame} 
+	
+	
+	
+	\subsection{Funciones exponenciales}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Funciones exponenciales}
+		\begin{definicion}[Función exponencial]
+			Una \emph{función exponencial} de base $a$ es una función de la forma
+			\[
+				f(x)=a^x,
+			\]
+			donde $a$ es un valor real positivo distinto de 1.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_exponencial}}
+		\end{center}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de las funciones exponenciales}
+		\begin{itemize}
+			\item Su dominio es $\mathbb{R}$.
+			\item Su imagen es $\mathbb{R}^+$.
+			\item Todas pasan por el punto $(0,1)$.
+			\item El crecimiento depende de la base. Si $f(x)=a^x$ entonces
+			      \begin{itemize}
+			      	\item Si $0<a<1$ $\Rightarrow$ función decreciente.
+			      	\item Si $a>1$ $\Rightarrow$ función creciente. 
+			      \end{itemize}
+			      Además, si $f(x)=a^x$ y $g(x)=b^x$ con $a<b$, entonces
+			      \begin{itemize}
+			      	\item Si $x<0$ $\Rightarrow$ $f(x)>g(x)$.
+			      	\item Si $x>0$ $\Rightarrow$ $f(x)<g(x)$.
+			      \end{itemize}
+			      
+			\item Un caso particular sería $a=1$ que es una función constante.
+		\end{itemize}
+	\end{frame} 
+	
+	
+	
+	\subsection{Funciones logarítmicas}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Funciones logarítmicas}
+		\begin{definicion}[Función logarítmica]
+			Dada una función exponencial $f(x)=a^x$, se define la \emph{función logarítmica} de base $a$ como la función inversa de
+			$f$, y se denota
+			\[
+				f^{-1}(x)=\log_a x,
+			\]
+			donde $a$ es un valor real positivo distinto de 1.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_logaritmica}}
+		\end{center}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de las funciones logarítmicas}
+		\begin{itemize}
+			\item Por ser la inversa de la función exponencial, sus gráficas son simétricas respecto a la bisectriz del primer y
+			      tercer cuadrantes. Por tanto:
+			      \begin{itemize}
+			      	\item Su dominio es la imagen de la función exponencial, es decir $\mathbb{R}^+$.
+			      	\item Su imagen es el dominio de la función exponencial, es decir $\mathbb{R}$.
+			      \end{itemize}
+			\item Todas pasan por el punto $(1,0)$.
+			\item El crecimiento depende de la base. Si $f(x)=\log_a x$ entonces
+			      \begin{itemize}
+			      	\item Si $0<a<1$ $\Rightarrow$ función decreciente.
+			      	\item Si $a>1$ $\Rightarrow$ función creciente. 
+			      \end{itemize}
+			      Además, si $f(x)=\log_a x$ y $g(x)=\log_b x$ con $a<b$, entonces
+			      \begin{itemize}
+			      	\item Si $0<x<1$ $\Rightarrow$ $f(x)<g(x)$.
+			      	\item Si $x>1$ $\Rightarrow$ $f(x)>g(x)$
+			      \end{itemize}
+			      
+			\item No tiene sentido para $a=1$ por que sería una función constante.
+		\end{itemize}
+	\end{frame} 
+	
+	
+	
+	\subsection{Funciones trigonométricas}
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Funciones trigonométricas}
+		Surgen en geometría al medir las relaciones entre los catetos de un triángulo rectángulo, que dependen del ángulo del
+		cateto contiguo y la hipotenusa de dicho triángulo.
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/triangulo_rectangulo}}
+		\end{center}
+		No obstante, esta no es la única definición posible, sino que también pueden definirse a partir de la función
+		exponencial compleja.
+		\begin{center}
+			\begin{columns}
+				\begin{column}{0.4\textwidth}
+					\begin{itemize}
+						\item Seno
+						\item Coseno
+						\item Tangente
+					\end{itemize}
+				\end{column}
+				\begin{column}{0.4\textwidth}
+					\begin{itemize}
+						\item Arcoseno
+						\item Arcocoseno
+						\item Arcotangente
+					\end{itemize}
+				\end{column}
+			\end{columns}
+		\end{center}
+	\end{frame}
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Seno de un ángulo}
+		\begin{definicion}[Seno de un ángulo]
+			\begin{columns}
+				\begin{column}{0.6\textwidth}
+					Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define el \emph{seno} de $\alpha$, y se
+					nota $\sen \alpha$, como el cociente entre el cateto opuesto y la hipotenusa.
+				\end{column}
+				\begin{column}{0.2\textwidth}
+					\begin{center}
+						\scalebox{1}{\input{img/funciones_elementales/seno_triangulo}}\\
+						\scriptsize
+						$\sen \alpha= \dfrac{BC}{AC}$
+					\end{center}
+				\end{column}
+			\end{columns}
+		\end{definicion}
+		\bigskip
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje
+				$OX$, como el cociente entre la ordenada de cualquier punto del otro lado y su distancia al vértice.
+			\end{column}
+			\begin{column}{0.2\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/seno_circunferencia}}\\
+					\scriptsize
+					$\sen \alpha= \dfrac{BC}{AC}$
+				\end{center}
+			\end{column}
+		\end{columns}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Función seno}
+		\begin{definicion}[Función seno]
+			Se define la función \emph{seno},
+			\[f(x)=\sen x\]
+			como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su seno.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_seno}}
+		\end{center}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de la función seno}
+		\begin{itemize}
+			\item Su dominio es $\mathbb{R}$.
+			\item Su imagen es el intervalo $[-1,1]$.
+			\item Es periódica, con periodo $2\pi$ y amplitud $1$
+			      \[\sen (x+2k\pi)= \sen x\quad \forall k\in \mathbb{Z}.\]
+			\item Algunos valores para recordar:
+			      \[
+			      	\begin{array}{llll}
+			      		\sen 0=0      & \sen \pi/6= 1/2 & \sen \pi/4=\sqrt{2}/2 & \sen \pi/3= \sqrt{3}/2 \\
+			      		\sen \pi/2 =1 & \sen \pi = 0    & \sen 3\pi/2=-1        & \sen 2\pi=0            
+			      	\end{array}
+			      \]
+			\item Es una función impar: $\sen(-x)=-\sen x$.
+		\end{itemize}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Coseno de un ángulo}
+		\begin{definicion}[Coseno de un ángulo]
+			\begin{columns}
+				\begin{column}{0.6\textwidth}
+					Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define el \emph{coseno} de $\alpha$, y se
+					nota $\cos \alpha$, como el cociente entre el cateto contiguo y la hipotenusa.
+				\end{column}
+				\begin{column}{0.2\textwidth}
+					\begin{center}
+						\scalebox{1}{\input{img/funciones_elementales/coseno_triangulo}}\\
+						\scriptsize 
+						$\cos \alpha= \dfrac{AB}{AC}$
+					\end{center}
+				\end{column}
+			\end{columns}
+		\end{definicion}
+		\bigskip
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje $OX$, como el cociente entre la abscisa de cualquier punto del otro lado y su distancia al vértice.
+			\end{column}
+			\begin{column}{0.2\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/coseno_circunferencia}}\\
+					\scriptsize
+					$\cos \alpha= \dfrac{AB}{AC}$
+				\end{center}
+			\end{column}
+		\end{columns}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Función coseno}
+		\begin{definicion}[Función coseno]
+			Se define la función \emph{coseno},
+			\[f(x)=\cos x\]
+			como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su coseno.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_coseno}}
+		\end{center}
+	\end{frame} 
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de la función coseno}
+		\begin{itemize}
+			\item Su dominio es $\mathbb{R}$.
+			\item Su imagen es el intervalo $[-1,1]$.
+			\item Es periódica, con periodo $2\pi$ y amplitud $1$
+			      \[\cos (x+2k\pi)= \cos x\quad \forall k\in \mathbb{Z}.\]
+			\item Algunos valores para recordar:
+			      \[
+			      	\begin{array}{llll}
+			      		\cos 0=1      & \cos \pi/6= \sqrt{3}/2 & \cos \pi/4=\sqrt{2}/2 & \cos \pi/3= \sqrt{2}/2 \\
+			      		\cos \pi/2 =0 & \cos \pi = -1          & \cos 3\pi/2=0         & \cos 2\pi=1            
+			      	\end{array}
+			      \]
+			\item Es una función par: $\cos(-x)=\cos x$.
+		\end{itemize}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Tangente de un ángulo}
+		\begin{definicion}[Tangente de un ángulo]
+			\begin{columns}
+				\begin{column}{0.6\textwidth}
+					Sea $\alpha$ cualquiera de los ángulos agudos de un triángulo rectángulo, se define la \emph{tangente} de $\alpha$, y se
+					nota $\tg \alpha$, como el cociente entre el cateto opuesto y el cateto contiguo.
+				\end{column}
+				\begin{column}{0.2\textwidth}
+					\begin{center}
+						\scalebox{1}{\input{img/funciones_elementales/tangente_triangulo}}\\
+						\scriptsize
+						$\tg \alpha= \dfrac{BC}{AB}$
+					\end{center}
+				\end{column}
+			\end{columns}
+		\end{definicion}
+		\bigskip
+		\begin{columns}
+			\begin{column}{0.6\textwidth}
+				La definición se extiende fácilmente a ángulos de circunferencia con vértice en el origen y uno de sus lados el eje
+				$OX$, como el cociente entre la ordenada y la abscisa de cualquier punto del otro lado.
+			\end{column}
+			\begin{column}{0.2\textwidth}
+				\begin{center}
+					\scalebox{1}{\input{img/funciones_elementales/tangente_circunferencia}}\\
+					\scriptsize
+					$\tg \alpha= \dfrac{BC}{AB}$
+				\end{center}
+			\end{column}
+		\end{columns}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Función tangente}
+		\begin{definicion}[Función tangente]
+			Se define la función \emph{tangente},
+			\[f(x)=\tg x=\frac{\sen x}{\cos x}\]
+			como la función que asocia a cada ángulo $x$ (habitualmente medido en radianes) su tangente.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_tangente}}
+		\end{center}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de la función tangente}
+		\begin{itemize}
+			\item Su dominio es $\mathbb{R}$ menos las raíces del coseno, es decir $\mathbb{R}-\{2k\pi/2: k\in \mathbb{Z}\}$.
+			\item Su imagen es $\mathbb{R}$.
+			\item Es periódica, con periodo $2\pi$
+			      \[\tg (x+2k\pi)= \tg x\quad \forall k\in \mathbb{Z}\]
+			\item Algunos valores para recordar:
+			      \[
+			      	\begin{array}{lll}
+			      		\tg 0=0             & \tg \pi/6= 1/\sqrt{3} & \tg \pi/4=1 \\
+			      		\tg \pi/3= \sqrt{3} & \tg \pi =0            & \tg 2\pi=0  
+			      	\end{array}
+			      \]
+		\end{itemize}
+	\end{frame} 
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Función arcoseno}
+		\begin{definicion}[Función arcoseno]
+			Se define la función \emph{arcoseno},
+			\[f(x)=\arcsen x\]
+			como la función inversa de la función seno.
+		\end{definicion}
+		\begin{center}
+			\scalebox{1}{\input{img/funciones_elementales/funcion_arcoseno}}
+		\end{center}
+	\end{frame} 
+	
+	
+	
+	%---------------------------------------------------------------------slide----
+	\begin{frame}
+		\frametitle{Propiedades de la función arcoseno}
+		\begin{itemize}
+			\item Por ser la inversa de la función seno, sus gráficas son simétricas respecto a la bisectriz del primer y tercer
+			      cuadrantes. Por tanto:
+			      \begin{itemize}
+			      	\item Su dominio es la imagen de la función seno, es decir $[-1,1]$.
+			      	\item Su imagen es el dominio restringido de la función seno, es decir $[-\pi/2,\pi/2]$.\footnote{Para que exista la
+			      		      inversa de la función seno, es necesario restringir su dominio a $[-\pi/2,\pi/2]$ para que sea inyectiva.}
+			      	\end{itemize}
+			      	\item Es creciente en todo el dominio.
+			      \end{itemize}
+		\end{frame} 
+		
+		
+		%---------------------------------------------------------------------slide----
+		\begin{frame}
+			\frametitle{Función arcocoseno}
+			\begin{definicion}[Función arcocoseno]
+				Se define la función \emph{arcocoseno},
+				\[f(x)=\arccos x\]
+				como la función inversa de la función coseno.
+			\end{definicion}
+			\begin{center}
+				\scalebox{1}{\input{img/funciones_elementales/funcion_arcocoseno}}
+			\end{center}
+		\end{frame} 
+		
+		
+		% ---------------------------------------------------------------------slide----
+		\begin{frame}
+			\frametitle{Propiedades de la función arcoseno}
+			\begin{itemize}
+				\item Por ser la inversa de la función coseno, sus gráficas son simétricas respecto a la bisectriz del primer y tercer
+				      cuadrantes. Por tanto:
+				      \begin{itemize}
+				      	\item Su dominio es la imagen de la función coseno, es decir $[-1,1]$.
+				      	\item Su imagen es el dominio restringido de la función coseno, es decir $[0,\pi]$.
+				      	      \footnote{Para que exista la inversa de la función coseno, es necesario restringir su dominio a $[0,\pi]$ para que sea inyectiva.}
+				      \end{itemize}
+				\item Es decreciente en todo el dominio.
+			\end{itemize}
+		\end{frame} 
+		
+		
+		%---------------------------------------------------------------------slide----
+		\begin{frame}
+			\frametitle{Función arcotangente}
+			\begin{definicion}[Función arcotangente]
+				Se define la función \emph{arcotangente},
+				\[f(x)=\arctg x\]
+				como la función inversa de la función tangente.
+			\end{definicion}
+			\begin{center}
+				\scalebox{1}{\input{img/funciones_elementales/funcion_arcotangente}}
+			\end{center}
+		\end{frame} 
+		
+		
+		%---------------------------------------------------------------------slide----
+		\begin{frame}
+			\frametitle{Propiedades de la función arcotangente}
+			\begin{itemize}
+				\item Por ser la inversa de la función tangente, sus gráficas son simétricas respecto a la bisectriz del primer y tercer
+				      cuadrantes. Por tanto:
+				      \begin{itemize}
+				      	\item Su dominio es la imagen de la función tangente, es decir $\mathbb{R}$.
+				      	\item Su imagen es el dominio restringido de la función tangente, es decir $(-\pi/2,\pi/2)$.
+				      	      \footnote{Para que exista la inversa de la función tangente, es necesario restringir su dominio a $(\pi/2,\pi/2)$ para que sea inyectiva.}
+				      \end{itemize}
+				\item Es creciente en todo el dominio.
+			\end{itemize}
+		\end{frame} 
+		
+		
+		%---------------------------------------------------------------------slide----
+		\begin{frame}
+			\frametitle{Algunas relaciones trigonométricas}
+			\begin{itemize}
+				\item $\sen^2 x+\cos^2 x=1$
+				\item $\sen(x+y)=\sen x \cos y+\cos x \sen y$
+				\item $\cos(x+y)=\cos x \cos y-\sen x \sen y$
+				\item $\tg (x+y)= \dfrac{\tg x+\tg y}{1-\tg x \tg y}$
+				\item $\sen x + \sen y = 2 \sen \dfrac{x+y}{2}\cos\dfrac{x-y}{2}$
+				\item $\cos x + \cos y = 2 \cos \dfrac{x+y}{2}\cos\dfrac{x-y}{2}$
+				\item $\cos x - \cos y = -2 \sen \dfrac{x+y}{2}\sen\dfrac{x-y}{2}$
+			\end{itemize}
+		\end{frame} 

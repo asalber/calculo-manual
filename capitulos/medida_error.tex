@@ -1,0 +1,364 @@
+\section{Medida y Error}
+%---------------------------------------------------------------------slide----
+\mode<presentation>{
+	\begin{frame}
+		\frametitle{Medida y Error}
+		\tableofcontents[sectionstyle=show/hide,hideothersubsections]
+	\end{frame}
+}
+
+
+\subsection{Medida de una magnitud y error asociado}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Medidas}
+	Cualquier ciencia experimental trata de conocer y comprender el mundo que estudia observándolo y realizando medidas
+	experimentales.
+	
+	A partir de estas medidas se construirán y validarán los modelos matemáticos que expliquen los fenómenos naturales. En
+	consecuencia, la bondad y calidad de estas medidas es fundamental a la hora de obtener modelos correctos.
+	
+	A la hora de realizar medidas experimentales de cualquier magnitud física, debe tenerse en cuenta que \emph{no existe
+	ningún modo de medir una magnitud con infinita precisión} y por tanto, toda medida estará afectada de cierta
+	\emph{imprecisión} o \emph{error}.
+	
+	\begin{block}{Medida de una magnitud}
+		La medida de cualquier magnitud física $X$ debe expresarse indicando el mejor valor de la misma $x$ acompañado
+		del error $\varepsilon$ de dicho valor:
+		\[
+			X = x\pm \varepsilon,
+		\]
+		donde $\varepsilon$ es una cota superior del error del valor $x$, es decir, $|X-x|\leq \varepsilon$.
+	\end{block}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Expresión de una medida y su error}
+	A la hora de expresar una medida $X=x\pm \varepsilon$, deben tenerse en cuenta los siguientes criterios:
+	\begin{itemize}
+		\item El error $\varepsilon$ debe expresarse sólo con una o dos cifras significativas, donde la primera cifra
+		      significativa de un número es la primera cifra distinta de cero comenzando por la izquierda, la segunda es la
+		      siguiente, y así sucesivamente.
+		      
+		      Por tanto, \emph{el error debe redondearse por exceso en la primera o segunda cifra significativa}. 
+		      
+		\item El valor de la magnitud $x$ debe expresarse con tantas cifras significativas como indique su error y debe
+		      redondearse, por exceso o por defecto, en la cifra significativa correspondiente a la última cifra considerada en el
+		      error. 
+	\end{itemize}
+	
+	\structure{\textbf{Ejemplo}} Si se mide la temperatura de un líquido y se obtiene un valor $186.27641$ K con un error
+	$0.01638$ K, el resultado debe expresarse como
+	\[
+		T=186.276\pm 0.017 \mbox{ K}.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Mejor valor de una magnitud}
+	Siempre que sea posible las medidas de una magnitud deben repetirse para mejorar la precisión del resultado.
+	
+	Si se realizan $n$ mediciones de un mismo ente físico, todas ellas realizadas siguiendo un mismo procedimiento, se
+	obtiene una muestra de medidas 
+	\[
+		x_1,x_2,\ldots, x_n.
+	\]
+	
+	En principio, no hay ningún motivo para escoger uno u otro valor particular como mejor valor y por ello debe tomarse
+	como mejor valor estimativo de la magnitud la \emph{media aritmética muestral} de los $n$ valores:
+	\[
+		\bar x = \frac{\sum_{i=1}^n x_i}{n}.
+	\] 
+\end{frame}
+
+
+
+\subsection{Tipos de errores de una medida}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Tipos de errores asociados al mejor valor de una magnitud}
+	Al medir una magnitud pueden aparecer distintos tipos de errores:
+	\begin{itemize}
+		\item Errores sistemáticos.
+		\item Errores en el aparato de medida.
+		\item Errores aleatorios o estadísticos.
+	\end{itemize}
+	El error total asociado al mejor valor de una magnitud será la suma de cada uno de estos tipos de errores. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Error sistemático}
+	El \emph{error sistemático} $\varepsilon_{\textrm{sist}}$ es el debidos al método de medida utilizado. Suele
+	deberse a la falta de calidad o calibrado del aparato de medida o a algún error o sesgo en la fórmula o diseño del
+	experimento o a que la medición depende de la pericia del observador que mide.
+	
+	Afectan por igual a todas las medidas, haciendo que todas de ellas se desvíen en el mismo sentido, siendo por lo
+	general difíles de dectectar y eliminar. Son, por lo tanto, los errores más indeseables y no existe ninguna expresión
+	matemática que determine su valor, sino que deben ser estimados en cada caso según el método de medida utilizado.
+	
+	En el caso de errores debidos al calibrado del aparato, pueden eliminarse fácilmente haciendo una calibración del mismo
+	antes de realizar las medidas. La calibración puede hacerse fácilmente midiendo una magnitud real de 0 y ajustando el
+	aparato, si fuera necesario, para que efectivamente marque 0. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Error del aparato de medida }
+	El \emph{error del aparato} $\Delta x$ es el debido al límite de precisión en la capacidad de medida del instrumento
+	utilizado. 
+	
+	Este error, llamado también \emph{incertidumbre}, está siempre presente y es independiente del observador
+	que realiza la medida.
+	
+	Cuando la escala del aparato no es continua, como ocurre en instrumentos digitales, la incertidumbre se toma igual a la
+	mínima lectura que puede hacerse en dicha escala, y cuando es continua se toma igual a la mitad de la mínima lectura.
+	
+	\structure{\textbf{Ejemplo}} Si se mide el tiempo con un cronómetro digital con mínima unidad la décima de segundo,
+	entonces la incertidumbre en las medidas será $\Delta t=0.1$ s, mientras que si se mide con un cronómetro analógico con
+	movimiento continuo de la aguja, la incertidumbre será $\Delta t=0.05$ s.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Error aleatorio}
+	El \emph{error aleatorio} es el debido a las pequeñas variaciones incontrolables en las condiciones externas que se
+	producen de unas medidas a otras, es decir, es el error debido al \emph{azar}. 
+	
+	Estos errores perturban de manera diferente a cada medida, explicando que se obtengan diferentes valores pese a que
+	todas las observaciones se hagan siguiendo el mismo procedimiento o protocolo.
+	
+	En consecuencia, este error sólo tiene sentido cuando se realizan distintas medidas de una misma magnitud. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo del error aleatorio}
+	Si se realizan $n$ mediciones, obteniendo los valores $x_1,\ldots,x_n$, entonces cada una de estas medidas puede
+	expresarse como
+	\[
+		x_i = \mu + \varepsilon_i, 
+	\]
+	donde $\mu$ es la media poblacional de todas la medidas y $\varepsilon_i$ el error aleatorio asociado a cada medida.
+	
+	Como en el error aleatorio influyen multitud de factores debidos a azar, según el teorema central del límite puede
+	afirmarse que $\varepsilon_i\sim N(0,\sigma)$, con $\sigma$ la desviación típica poblacional de todas las medidas, y que
+	puede estimarse por medio de la
+	\emph{cuasidesviación típica muestral}
+	\[
+		\hat{s}_x = \sqrt{\frac{\sum_{i=1}^n (x_i-\bar x)^2}{n-1}}, 
+	\]
+	
+	Si, como hemos visto antes, se toma como mejor valor de la magnitud la media muestral $\bar x$, el error
+	asociado será su desviación típica, que vale
+	\[
+		s_{\bar x} = \frac{\hat{s}_x}{\sqrt n} = \sqrt{\frac{\sum_{i=1}^n (x_i-\bar x)^2}{n(n-1)}}.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo del error aleatorio}
+	\framesubtitle{Ejemplo}
+	Supongamos que al medir el periodo de oscilación de un péndulo con un cronómetro obtenemos las siguientes medidas:
+	\begin{center}
+		$1.21$s -- $1.19$s -- $1.22$s -- $1.18$s -- $1.19$s -- $1.20$s
+	\end{center}
+	
+	Entonces el mejor valor del periodo del péndulo es 
+	\[
+		\bar x = \frac{1.21+1.19+1.22+1.18+1.19+1.20}{6} =  1.198333\mbox{s},
+	\] 
+	y el error debido al azar es
+	\[
+		s_{\bar x} = \sqrt{\frac{(1.21-1.198)^2+\cdots +(1.20-1.198)^2}{6\cdot 5}} = 0.006009\mbox{s}.
+	\]
+	Así pues, suponiendo que no haya error sistemático, la medida del periodo es, 
+	\[
+		1.198\pm 0.007\mbox{s}.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Consideraciones sobre el error aleatorio}
+	Puesto que el error aleatorio, si realmente depende del azar, debería seguir una distribución normal, entonces la media
+	muestral $\bar x$ también seguirá una distribución normal
+	\[
+		\bar x\sim N(\mu,s_{\bar x}),
+	\]
+	de manera que, de acuerdo a la distribución normal se cumple
+	\begin{itemize}
+		\item $P(\bar x-s_{\bar x}\leq \mu\leq \bar x+s_{\bar x})=0.683$.
+		\item $P(\bar x-2s_{\bar x}\leq \mu\leq \bar x+2s_{\bar x})=0.954$.
+		\item $P(\bar x-3s_{\bar x}\leq \mu\leq \bar x+3s_{\bar x})=0.997$.
+	\end{itemize}
+	
+	Por consiguiente, cuando se escribe $\bar x\pm s_{\bar x}$ no se está diciendo que el valor real está en el intervalo
+	$(\bar x-s_{\bar x},\bar x+s_{\bar x})$, sino que existe aproximadamente un $68\%$ de probabilidad de que el valor real
+	esté dentro del intervalo. 
+	
+	Otra consecuencia de esto mismo es que cuando una medida dista más de 3 veces la desviación típica de la media
+	muestral, dicha medida debe descartarse ya que es muy probable que algo ha fallado en la medida. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo del error total}
+	Según lo visto, el error total de una medida dependerá de si realizamos varias mediciones o sólo una.
+	
+	\begin{itemize}
+		\item \structure{\textbf{Una medición}} Si sólo se realiza una medición, entonces el error aleatorio no tiene sentido y
+		      el error total será la suma del error sistemático y el error del aparato, es decir,
+		      \[
+		      	\varepsilon = \varepsilon_{\textrm{sist}}+\Delta x.
+		      \]
+		\item \structure{\textbf{Varias mediciones}} Si se realizan varias mediciones, entonces el error total será la suma del
+		      error sistemático, de la incertidumbre del aparato y del error aleatorio, es decir,
+		      \[
+		      	\varepsilon = \varepsilon_{\textrm{sist}}+\Delta x+s_{\bar x},
+		      \]
+		      aunque cuando se utilizan aparatos suficientemente precisos, la incertidumbre del aparto suele ser bastante menor que
+		      el error aleatorio y puede despreciarse.
+	\end{itemize} 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Error sistemático vs error aleatorio}
+	Utilizando el símil del tiro al blanco, tendríamos estas situaciones
+	\begin{center}
+		\scalebox{1}{\input{img/medida_error/tipos_errores}}
+	\end{center}
+\end{frame}
+
+
+
+\subsection{Error de las medidas indirectas}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Error de la medidas indirectas}
+	Hay magnitudes para las que existe un aparato que permite medirlas directamente, como pueden ser la longitud, el
+	tiempo, el volumen o la temperatura, mientras que otras deben ser medidas indirectamente a partir de una fórmula en la
+	que intervienen medidas directas u otras indirectas calculadas previamente. Esto puede expresarse funcionalmente de la forma
+	\[Y(X_1,\ldots,X_n),\]
+	donde $Y$ es la magnitud medida indirectamente y $X_1,\ldots,X_n$ son las medias de las magnitudes de las que depende. 
+	
+	Puesto que las medidas directas tienen asociado un error, dicho error se propagará a las medidas indirectas según la
+	fórmula que permita su cálculo.
+	
+	De acuerdo a la medición de las magnitudes de las que depende $Y$, puden darse cuatro casos:
+	\begin{itemize}
+		\item Todas las magnitudes se han medido una sola vez.
+		\item Todas las magnitudes se han medido varias veces.
+		\item Algunas magnitudes se han medido una sola vez y el resto varias veces.
+		\item La magnitud $Y$ se ha medido indirectamente varias veces.
+	\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo del error de las medidas derivadas}
+	\framesubtitle{Todas las magnitudes se han medido una sola vez}
+	Supongamos que las magnitudes $X_1,\ldots,X_n$ se han medido una sóla vez obteniendo las medidas
+	\[
+		x_1\pm \varepsilon_1,\ldots, x_n\pm\varepsilon_n,
+	\] 
+	siendo $\varepsilon_i=\varepsilon_{\textrm{sist}_i}+\Delta x_i$.
+	
+	Entonces la expresión general del error total del valor obtenido para $Y$ es
+	\[
+		\varepsilon=\left|\frac{\partial Y(x_1,\ldots,x_n)}{\partial X_1}\right|\varepsilon_1+\cdots+\left|\frac{\partial
+			Y(x_1,\ldots,x_n)}{\partial X_n}\right|\varepsilon_n.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo del error de las medidas derivadas}
+	\framesubtitle{Todas las magnitudes se han medido varias veces}
+	Supongamos que las magnitudes $X_1,\ldots,X_n$ se han medido varias veces obteniendo las medidas
+	\[
+		\bar x_1\pm \varepsilon_1,\ldots, \bar x_n\pm\varepsilon_n,
+	\] 
+	siendo $\varepsilon_i=\varepsilon_{\textrm{sist}_i}+s_{\bar x_i}$.
+	
+	Entonces la expresión general del error total del valor obtenido para $Y$ es
+	\[
+		\varepsilon=\sqrt{\left(\frac{\partial Y(\bar x_1,\ldots,\bar x_n)}{\partial
+			X_1}\varepsilon_1\right)^2+\cdots+\left(\frac{\partial Y(\bar x_1,\ldots,\bar x_n)}{\partial
+			X_n}\varepsilon_n\right)^2}.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo del error de las medidas derivadas}
+	\framesubtitle{Algunas magnitudes se han medido una vez y otras varias veces}
+	Supongamos que las magnitudes $X_1,\ldots,X_n$ se han medido algunas una sóla vez y otras varias veces obteniendo las
+	medidas
+	\[
+		\bar x_1\pm \varepsilon_1,\ldots, \bar x_n\pm\varepsilon_n,
+	\] 
+	siendo $\varepsilon_i=\varepsilon_{\textrm{sist}_i}+\Delta x_i$ para
+	las magnitudes que se han medido una sóla vez y $\varepsilon_i=\varepsilon_{\textrm{sist}_i}+s_{\bar x_i}$ para las que
+	se han medido varias veces.
+	
+	Como ambos errores son conceptualmente diferences no deben utilizarse en un mismo cálculo. Lo que se hace es convertir
+	las incertidumbres en desviaciones típicas, multiplicando por $2/3$. Esto es debido a que en el caso de las
+	medidas aisladas se tiene la certeza absoluta de que la verdadera medida está en el intervalo
+	$(x_i-\Delta_i,x_i+\Delta_i)$, mientras que para las medidas reiteradas se sabe que la verdadera medida estará en el
+	intervalo $(\bar x_i-s_{\bar x_i},\bar x_i+s_{\bar x_i})$ con probabilidad $0.68$, que es más o menos $2/3$ del
+	$100\%$.
+	
+	Una vez transformadas, el error total de $Y$ se calcula como antes
+	\[
+		\varepsilon=\sqrt{\left(\frac{\partial Y(\bar x_1,\ldots,\bar x_n)}{\partial
+			X_1}\varepsilon_1\right)^2+\cdots+\left(\frac{\partial Y(\bar x_1,\ldots,\bar x_n)}{\partial
+			X_n}\varepsilon_n\right)^2}.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo del error de las medidas derivadas}
+	\framesubtitle{Varias medidas indirectas de la magnitud}
+	Supongamos que se ha medido varias veces de manera indirecta la magnitud $Y$ obteniendo las medidas
+	\[
+		\bar y_1\pm \varepsilon_1,\ldots, \bar y_n\pm\varepsilon_n,
+	\] 
+	donde $\varepsilon_i$ se ha calculado según el caso que corresponda de los anteriores.
+	
+	En este caso, si efectivamente todas son medidas de un mismo ente físico, deberían coincidir dentro del error según el
+	criterio visto antes, es decir, considerando en intervalo $(y_i-3\varepsilon_i,y_i+3\varepsilon_i)$. En tal caso, se
+	tomará como mejor valor posible la media aritmética de las medidas, ponderadas por el inverso del cuadrado del error de
+	cada valor, es decir,
+	\[
+		\bar y =
+		\frac{\frac{1}{\varepsilon_1^2}y_1+\cdots+\frac{1}{\varepsilon_n^2}y_n}{\frac{1}{\varepsilon_1^2}+\cdots+\frac{1}{\varepsilon_n^2}}
+		= =\frac{\sum_{i=1}^n\frac{1}{\varepsilon_i^2}y_i}{\sum_{i=1}^n\frac{1}{\varepsilon_i^2}},
+	\]
+	y el error asociado a esta medida es
+	\[
+		\varepsilon = \frac{1}{\sqrt{\frac{1}{\varepsilon_1^2}+\cdots+\frac{1}{\varepsilon_n^2}}}
+	\]
+\end{frame}
+
+
+

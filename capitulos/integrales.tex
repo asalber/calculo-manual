@@ -1,0 +1,449 @@
+\section{Integrales}
+%---------------------------------------------------------------------slide----
+\mode<presentation>{
+	\begin{frame}
+		\frametitle{Integrales}
+		\tableofcontents[sectionstyle=show/hide,hideothersubsections]
+	\end{frame}
+}
+
+
+\subsection{Primitiva de una función}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Primitiva de una función}
+	\begin{definicion}[Primitiva de una función]
+		Se dice que la función $F(X)$ es una \emph{función primitiva} de $f(x)$ si se verifica que $F'(x)=f(x)$ $\forall x \in \textrm{Dom}(f)$.
+	\end{definicion}
+	\structure{\textbf{Ejemplo}} La función $F(x)=x^2$ es una primitiva de la función $f(x)=2x$ ya que $F'(x)=2x$ para todo $\mathbb{R}$.
+	
+	El cálculo de primitivas puede verse con un proceso inverso al cálculo de derivadas, y es por eso también se suele llamar \emph{antiderivada} a la primitiva de una función.
+	
+	Como dos funciones que difieran en una constante tienen la misma derivada, si $F(x)$ es una función primitiva de $f(x)$
+	también lo será toda función de la forma $F(x)+k$ $\forall k \in \mathbb{R}$. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integral indefinida de una función}
+	Como dos funciones que difieran en una constante tienen la misma derivada, si $F(x)$ es una función primitiva de $f(x)$ también lo será toda función de la forma $F(x)+k$ $\forall k \in \mathbb{R}$.
+	
+	\begin{definicion}[Integral indefinida]
+		Se llama \emph{función integral indefinida} de la función $f$ al conjunto de todas sus funciones primitivas y se representa como
+		\[
+			\int{f(x)}\,dx=F(x)+C
+		\]
+		siendo $F(x)$ una función primitiva de $f(x)$ y $C$ una constante arbitraria.
+	\end{definicion}
+	
+	\structure{\textbf{Ejemplo}} La integral indefinida de $f(x)=2x$ es
+	\[\int 2x\, dx = x^2+C.\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Interpretación de la integral}
+	En temas anteriores se vio que la derivada de una función es la tasa de variación instantánea, de manera que si
+	conocemos la tasa de variación instantánea de una función en cada instante, podemos averiguar la variación real de la
+	función. 
+	
+	\structure{\textbf{Ejemplo}} ¿Cuál sera el espacio recorrido por un objeto en caída libre?
+	
+	Cuando soltamos cualquier objeto desde una altura, la única fuerza que actúa sobre el es la gravedad, con una
+	aceleración aproximada de $9.8$ m/s$^2$, esto quiere decir que la velocidad varía de forma constante y por tanto la
+	velocidad del objeto en cada instante $t$ sera: 
+	\[
+		v(t) = 9.8t  \mbox{ m/s}
+	\] 
+	Puesto que la velocidad en cada instante es la tasa de variación instantánea del espacio recorrido por el objeto, su
+	primitiva nos dará el espacio recorrio por el objeto en cada instante: 
+	\[
+		e(t) = \int 9.8t\, dt = 9,8\frac{t^2}{2}.
+	\]
+	Así, por ejemplo, a los 2 segundos, el espacio recorrido será $e(2) = 9.8\frac{2^2}{2} = 19.6$ m.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Linealidad de la integral}
+	Dadas dos funciones $f$ y $g$ que admiten primitiva, y una constante $k \in \mathbb{R}$ se verifica que
+	\begin{enumerate}
+		\item $\int{(f(x)+g(x))}\,dx=\int{f(x)}\,dx+\int{g(x)}\,dx$,
+		      
+		\item $\int{kf(x)}\,dx=k\int{f(x)}\,dx$.
+	\end{enumerate}
+\end{frame}
+
+
+\subsection{Integrales inmediatas}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integrales inmediatas}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item $\int a\,dx=ax+C$, con $a$ constante.
+				\item $\int x^n\,dx=\dfrac{x^{n+1}}{n+1}+C$ \quad si $n\neq -1$.
+				\item $\int \dfrac{1}{x}\, dx=\ln|x|+C$.
+				\item $\int e^x\,dx=e^x+C$.
+				\item $\int a^x\,dx=\dfrac{a^x}{\ln a}+C$.
+				\item $\int \sen x\, dx=-\cos x+C$.
+				\item $\int \cos x\, dx=\sen x+C$.
+				\item $\int \tg x\, dx=\ln|\sec x|+C$.
+				\item $\int \sec x\, dx = \ln|\sec x + \tg x|+C$.
+				\item $\int \cosec x\, dx= \ln|\cosec x-\cotg x|+C$.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item $\int \cotg x \, dx= \ln|\sen x|+C$.
+				\item $\int \sec^2 x\, dx= \tg x+ C$.
+				\item $\int \cosec^2 x\, dx= -\cotg x+ C$.
+				\item $\int \sec x \tg x\, dx= \sec x+ C$.
+				\item $\int \cosec x \cotg x\, dx = -\cosec x +C$.
+				\item $\int \dfrac{dx}{\sqrt{a^2-x^2}}=\arcsen\dfrac{x}{a}+C$.
+				\item $\int \dfrac{dx}{a^2+x^2}=\dfrac{1}{a}\arctg\dfrac{x}{a}+C$.
+				\item $\int \dfrac{dx}{x\sqrt{x^2-a^2}}=\dfrac{1}{a}\sec^{-1}\dfrac{x}{a}+C$.
+				\item $\int \dfrac{dx}{a^2-x^2}=\dfrac{1}{2a}\ln|\dfrac{x+a}{x-a}|+C$.
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+\subsection{Técnicas de integración}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Técnicas de integración}
+	Desgraciadamente, y a diferencia del cálculo de derivadas, no existe un procedimiento infalible que permita calcular la primitiva de una función siempre que exista. Existen no obstante, diferentes técnicas para integrar algunos tipos de funciones. Las técnicas más habituales son:
+	\begin{itemize}
+		\item Integración por partes
+		\item Integración por reducción
+		\item Integración por cambio de variable
+		\item Integración de funciones racionales
+		\item Integración de funciones trigonométricas
+	\end{itemize}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración por partes}
+	Dadas $f$ y $g$, dos funciones derivables de $x$. De la regla de la derivada del producto se deduce
+	\[
+		\int{f'(x)g(x)}\,dx=f(x)g(x)-\int{g'(x)f(x)}\,dx,
+	\]
+	o con notación diferencial, si $u$ y $v$ son funciones derivables de $x$
+	\[
+		\int{u}\,dv=uv-\int{v}\,du.
+	\]
+	Al emplear el método de integración por partes se debe realizar la elección de $u$ y $dv$ de tal forma que las integrales que haya que realizar sean lo más sencillas posibles.
+	
+	\structure{\textbf{Ejemplo}} Para integrar $\int{x \sen x}\,dx$ se deberá elegir $u=x$ y $dv=\sen x\, dx$, con lo que $du=dx$ y $v=-\cos x$, resultando
+	\[
+		\int{x \sen x}\,dx=-x\cos x-\int (-\cos x)\,dx = -x\cos x +\sen x.
+	\]
+	Si hubiésemos elegido $u=\sen x$ y $dv=x\,dx$, la cosa se complica.
+\end{frame}
+
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración por reducción}
+	Las fórmulas de reducción permiten simplificar el cálculo cuando hay que aplicar la integración por partes varias veces consecutivas.
+	
+	Si se tiene que calcular una integral indefinida $I_{n}$ que depende de un número natural $n$, las fórmulas de reducción nos permitirán expresar $I_{n}$ en función de $I_{n-1}$, es decir se obtendrá una relación recurrente del tipo
+	\[
+		\ I_{n}=f(I_{n-1},x,n)
+	\]
+	con lo que calculando una integral se pueden obtener fácilmente las demás.
+	
+	\structure{\textbf{Ejemplo}} Si se desea calcular $I_{n}=\int{x^{n}e^{x}}\,dx$, aplicando la integración por partes se debe elegir $u=x^{n}$ y $dv=e^{x}\,dx$, con lo que $du=nx^{n-1}\,dx$ y $v=e^{x}$, obteniéndose
+	\[
+		\ I_{n}=\int{x^{n}e^{x}}\,dx=x^{n}e^{x}-n\int{x^{n-1}e^{x}}\,dx=x^{n}e^{x}-nI_{n-1}.
+	\]
+	Así, por ejemplo, para $n=3$ se tiene
+	\begin{align*}
+		\int x^3 e^x\, dx & = I_3 = x^3e^x-3I_2 = x^3e^x-3(x^2e^x-2I_1) = x^3e^x-3(x^2e^x-(xe^x-I_0) = \\
+		                  & = x^3e^x-3(x^2e^x-(xe^x-e^x) = e^x(x^3-3x^2+6x-6).                         
+	\end{align*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración por cambio de variable}
+	La regla de la cadena establece que la derivada de una función compuesta $f(g(x))$ es
+	\[
+		f(g(x))' = f'(g(x))g'(x),
+	\]
+	de manera que es posible integrar esta última expresión haciendo un cambio de variable $u=g(x)$ de manera que
+	$du=g'(x)dx$:
+	\[
+		\int f'(g(x))g'(x)\, dx = \int f'(u)\, du = f(u)+C = f(g(x))+C.
+	\]
+	
+	\structure{\textbf{Ejemplo}} Para calcular la integral $\int{\dfrac{1}{x\log x}}\, dx$
+	puede hacerse el cambio de variable $u=\log x$ con lo que $du=\frac{1}{x}dx$ y sustituyendo queda
+	\[
+		\int \frac{dx}{x\log x}=\int \frac{1}{\log x}\frac{1}{x}\,dx = \int \frac{1}{u}\,du = \log |u|+ C,
+	\]
+	y deshaciendo el cambio tenemos
+	\[
+		\int \frac{1}{x\log x}\,dx= \log |\log x| + C.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración de funciones racionales}
+	Toda función racional se puede escribir como suma de un polinomio (que tiene primitiva inmediata) más una función racional propia, es decir, una función racional en la que el grado del numerador sea menor que el grado del denominador. A su vez, toda función racional propia puede expresarse como suma de fracciones simples de los tipos siguientes:
+	\[
+		\begin{array}{cl}
+			\dfrac{A}{(x-a)}           & \textrm{: con raíces reales simples del denominador.}       \\
+			\dfrac{A}{(x-a)^{n}}       & \textrm{: con raíces reales múltiples del denominador.}    \\
+			\dfrac{Ax+B}{x^2+cx+d}     & \textrm{: con raíces complejas simples del denominador.}    \\
+			\dfrac{Ax+B}{(x^2+cx+d)^n} & \textrm{: con raíces complejas múltiples del denominador.} 
+		\end{array}
+	\]
+	con $n>1$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración de funciones racionales}
+	\framesubtitle{Primitivas de las fracciones simples}
+	Usando la linealidad de la integral, basta calcular la primitiva de cada una de estas fracciones simples para calcular
+	la primitiva de la función racional:
+	\begin{align*}
+		\int \frac{A}{x-a}\,dx     & = A\log|x-a|+C,                                                                             \\
+		\int \frac{A}{(x-a)^n}\,dx & = \frac{-A}{(n-1)(x-a)^{n-1}}+C \textrm{ si $n\neq 1$}.                                     \\
+		\int \frac{Ax+B}{x^2+cx+d} & = \frac{A}{2}\log|x^2+cx+d|+\frac{2B-Ac}{\sqrt{4d-c^2}}\arctg \frac{2x+c}{\sqrt{4d-c^2}}+C. 
+	\end{align*}
+	
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}[allowframebreaks]
+	\frametitle{Integración de funciones racionales}
+	\framesubtitle{Ejemplo con raíces reales}
+	Consideremos la función $f(x)=\dfrac{x^2+3x-5}{x^3-3x+2}$. Su denominador se puede factorizar como $x^3-3x+2=(x-1)^2(x+2)$ por lo que tiene una raíz simple -2 y una raíz múltiple 1.
+	
+	La descomposición en fracciones simples es:
+	\begin{align*}
+		\frac{x^2+3x-5}{x^3-3x+2} & =\frac{A}{x-1}+\frac{B}{(x-1)^2}+\frac{C}{x+2} = \\ &= \frac{A(x-1)(x+2)+ B(x+2)+C(x-1)^2}{(x-1)^2(x+2)} = \\ &= \frac{(A+C)x^2+(A+B-2C)x+(-2A+2B+C)}{(x-1)^2(x+2)}
+	\end{align*}
+	e igualando los numeradores tenemos $A=16/9$, $B=-1/3$ y $C=-7/9$, de modo que
+	\[
+		\frac{x^2+3x-5}{x^3-3x+2}= \frac{16/9}{x-1}+\frac{-1/3}{(x-1)^2}+\frac{-7/9}{x+2}.
+	\]
+	Finalmente, integrando tenemos
+	\begin{align*}
+		\int \frac{x^2+3x-5}{x^3-3x+2}\, dx & = \int \frac{16/9}{x-1}\,dx+\int \frac{-1/3}{(x-1)^2}\,dx+\int \frac{-7/9}{x+2}\,dx = \\ &=
+		\frac{16}{9}\int\frac{1}{x-1}\,dx-\frac{1}{3}\int(x-1)^{-2}\,dx- \frac{7}{9}\int \frac{1}{x+2}\,dx = \\
+		&= \frac{16}{9}\ln|x-1|+\frac{1}{3(x-1)}-\frac{7}{9}\ln|x+2|+C.
+	\end{align*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración de funciones racionales}
+	\framesubtitle{Ejemplo con raíces imaginarias}
+	Consideremos la función $f(x)=\dfrac{x+1}{x^2-4x+8}$. 
+	
+	En este caso el denominador no tiene raíces reales, pero puede escribirse de la forma
+	\[
+		x^2-4x+8 = (x-2)^2+4
+	\]
+	Integrando, tenemos
+	\begin{align*}
+		\int \dfrac{x+1}{x^2-4x+8}\, dx & = \int \dfrac{x-2+3}{(x-2)^2+4}\,dx =                                         \\
+		                                & = \int \dfrac{x-2}{(x-2)^2+4}\,dx + \int \dfrac{3}{(x-2)^2+4}\,dx =           \\
+		                                & = \frac{1}{2}\ln|(x-2)^2+4| + \dfrac{3}{2}\arctg\left(\frac{x-2}{2}\right)+C. 
+	\end{align*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración de funciones trigonométricas}
+	\framesubtitle{Función $\sin^n x\cos^m x$ con $n$ o $m$ impares}
+	Si $f(x)=\sin^n x\cos^m x$ con $n$ o $m$ impares, entonces para integrar esta función se hace el cambio $\sen x = t$ o
+	$\cos x =t$.
+	
+	\structure{\textbf{Ejemplo}}
+	\[
+		\int \sen^2 x\cos^3 x\, dx = \int \sen^2 x\cos^2 x\cos x\, dx = \int \sen^2 x(1-\sen^2 x)\cos x\, dx,
+	\]
+	y haciendo el cambio $t=\sen x$, de modo que $dt = \cos x dx$, se tiene
+	\[
+		\int \sen^2 x(1-\sen^2 x)\cos x\, dx = \int t^2(1-t^2)\, dt = \int t^2-t^4 \, dt = \frac{t^3}{3}-\frac{t^5}{5}+C,
+	\]
+	y deshaciendo el cambio anterior se obtiene
+	\[
+		\int \sen^2 x\cos^3 x\, dx = \frac{\sen^3 x}{3}-\frac{\sin^5 x}{5}+C.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración de funciones trigonométricas}
+	\framesubtitle{Función $\sin^n x\cos^m x$ con $n$ y $m$ pares}
+	Si $f(x)=\sen^n x\cos^m x$ con $n$ y $m$ pares, entonces se suelen utilizar las siguientes igualdades para facilitar el
+	cálculo de la integral:
+	\begin{align*}
+		\sen^2 x     & = \frac{1}{2}(1-\cos 2x) \\
+		\cos^2 x     & = \frac{1}{2}(1+\cos 2x) \\
+		\sen x\cos x & = \frac{1}{2}\sen 2x     
+	\end{align*}
+	
+	\structure{\textbf{Ejemplo}}
+	\begin{align*}
+		\int \sen^2 x\cos^4 x\, dx & = \int (\sen x\cos x)^2\cos^2 x\, dx = \int \left(\frac{1}{2}\sen      
+		2x\right)^2\frac{1}{2}(1+\cos 2x)\,dx =\\
+		                           & = \frac{1}{8}\int \sen^2 2x\,dx+\frac{1}{8}\int \sin^2 2x \cos 2x\,dx, 
+	\end{align*}
+	siendo la primera integral es de este mismo tipo y la segunda del anterior
+	\[
+		\int \sen^2 x\cos^4 x\, dx = \frac{1}{32}x-\frac{1}{32}\sen 2x)+\frac{1}{24}\sen^3 2x
+	\] 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración de funciones trigonométricas}
+	\framesubtitle{Productos de senos y cosenos}
+	Las igualdades
+	\begin{align*}
+		\sen x\cos y & = \frac{1}{2}(\sen(x-y)+\sen(x+y)) \\
+		\sen x\sen y & = \frac{1}{2}(\cos(x-y)-\cos(x+y)) \\
+		\cos x\cos y & = \frac{1}{2}(\cos(x-y)+\cos(x+y)) 
+	\end{align*}
+	transforman los productos en sumas, simplificando su integración.
+	
+	\structure{\textbf{Ejemplo}}
+	\begin{align*}
+		\int \sen x\cos 2x\, dx & = \int \frac{1}{2}(\sen(x-2x)+\sen(x+2x))\,dx =                \\
+		                        & = \frac{1}{2}\int \sen (-x)\,dx +\frac{1}{2}\int \sen 3x\,dx = \\
+		                        & = \frac{1}{2}\cos(-x)- \frac{1}{6}\cos 3x +C.                  
+	\end{align*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integración de funciones trigonométricas}
+	\framesubtitle{Funciones racionales de senos y cosenos}
+	Si $f(x,y)$ es una función racional entonces la función $f(\sen x,\cos x)$ puede convertirse en una función racional en
+	$t$ mediante los cambios
+	\[
+		\tg \frac{x}{2}=t \quad \sen x=\frac{2t}{1+t^2} \quad \cos x = \frac{1-t^2}{1+t^2} \quad dx = \frac{2}{1+t^2}dt. 
+	\]
+	
+	\structure{\textbf{Ejemplo}}
+	\[
+		\int \frac{1}{\sen x}\,dx = \int \frac{1}{\frac{2t}{1+t^2}}\frac{2}{1+t^2}\,dt = \int \frac{1}{t}\,dt = \log|t|+C =
+		\log|\tg\frac{x}{2}|+C.
+	\]
+\end{frame}
+
+
+
+\subsection{Integral definida}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Integral definida}
+	\begin{definicion}[Integral definida]
+		Sea $f(x)$ una función cuya primitiva es $F(x)$ en un intervalo $[a,b]$. Se define la integral definida de $f(x)$ en el intervalo $[a,b]$ como
+		\[
+			\int_a^b f(x)\,dx = \left[F(x)\right]_a^b=F(b)-F(a)
+		\]
+	\end{definicion}
+	\structure{\textbf{Ejemplo}}. Dada la función $f(x)=x^2$, se tiene
+	\[
+		\int_1^2 x^2\,dx = \left[\frac{x^3}{3}\right]_1^2 = \frac{2^3}{3}-\frac{1^3}{3} = \frac{7}{3}.
+	\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Propiedades de la integral definida}
+	Dadas dos funciones $f$ y $g$ integrables en $[a,b]$ y $k \in \mathbb{R}$ se cumplen las siguientes propiedades
+	\begin{itemize}
+		\item $\int_{a}^{b}(f(x)+g(x))\,dx=\int_{a}^{b}f(x)\,dx+\int_{a}^{b}g(x)\,dx$ (linealidad)
+		\item $\int_{a}^{b}{kf(x)}\,dx=k\int_{a}^{b}{f(x)}\,dx$ (linealidad)
+		\item $\int_{a}^{b}{f(x)\,dx} \leq \int_{a}^{b}{g(x)\,dx}$ si $f(x)\leq g(x)\ \forall x \in [a,b]$ (monotonía)
+		\item $\int_{a}^{b}{f(x)\,dx} = \int_{a}^{c}{f(x)\,dx}+\int_{c}^{b}{f(x)\,dx}$ para cualquier $c\in(a,b)$ (aditividad)
+		\item $\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx$
+	\end{itemize}
+\end{frame}
+
+
+
+\subsection{Cálculo de áreas}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo de áreas}
+	\framesubtitle{Área delimitada por una función positiva y el eje de abscisas}
+	Si $f$ es una función integrable en un intervalo $[a,b]$ y $f(x)\geq 0\ \forall x\in[a,b]$, entonces la integral definida
+	\[\int_a^b f(x)\,dx\]
+	mide le área que queda entre la función $f$ y el eje de abscisas en el intervalo $[a,b]$.
+	\begin{center}
+		\scalebox{1}{\input{img/aplicaciones_integral/area_funcion_positiva}}
+	\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo de áreas}
+	\framesubtitle{Área delimitada por una función negativa y el eje de abscisas}
+	Si $f$ es una función integrable en un intervalo $[a,b]$ y $f(x)\leq 0\ \forall x\in[a,b]$, entonces el área que queda entre la función $f$ y el eje de abscisas en el intervalo $[a,b]$ es
+	\[
+		-\int_a^b f(x)\,dx.
+	\]
+	\begin{center}
+		\scalebox{1}{\input{img/aplicaciones_integral/area_funcion_negativa}}
+	\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo de áreas}
+	\framesubtitle{Área delimitada por una función y el eje de abscisas}
+	Si $f$ cambia de signo a lo largo del intervalo $[a,b]$ entonces se divide el intervalo de integración en intervalos donde $f$ tenga el mismo signo, se calcula cada área por separado y se suman.
+	\begin{center}
+		\scalebox{1}{\input{img/aplicaciones_integral/area_funcion_positiva_negativa}}
+	\end{center}
+	\[\int_a^c f(x)\,dx -\int_c^b f(x)\,dx\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+	\frametitle{Cálculo de áreas}
+	\framesubtitle{Área delimitada por dos funciones}
+	Si $f$ y $g$ son dos funciones integrables en el intervalo $[a,b]$ y se
+	verifica que $g(x)\leq f(x)$ $\forall x\in[a,b]$, entonces el área de la región
+	plana limitada por las curvas $y=f(x)$, $y=g(x)$, y las rectas $x=a$ y $x=b$
+	viene dada por
+	\[
+		\int_{a}^{b}{(f(x)- g(x))\,dx}.
+	\]
+	
+	\begin{center}
+		\scalebox{1}{\input{img/aplicaciones_integral/area_entre_funciones}}
+	\end{center}
+\end{frame}
